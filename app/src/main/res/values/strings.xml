@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">Time to Sleep</string>
+
+    <!-- ImageViews e suas descriptions (Mais gerais) -->
+    <string name="ic_back_description">Voltar</string>
+
+    <!-- BottomNav e seus títulos -->
+    <string name="bottom_nav_title_menu">Menu</string>
+    <string name="bottom_nav_title_cronometro">Cronômetro</string>
+    <string name="bottom_nav_title_relogio">Relógio</string>
+    <string name="bottom_nav_title_alarmes">Alarmes</string>
+
+    <!-- Slide e seus textos-->
+    <string name="slide_title_1">Um despertador feito para você!</string>
+    <string name="slide_description_1">Agradecemos por adquirir o V-Timer! Esperamos que este despertador ajude você ter maior autonomia!</string>
+    <string name="slide_title_2">Um aplicativo simples e funcional!</string>
+    <string name="slide_description_2">Através do aplicativo, você poderá definir alarmes, usar o cronômetro e verificar o dia e a hora.</string>
+    <string name="slide_title_3">Agora, devemos conectar o V-Timer!</string>
+    <string name="slide_description_3">Para isso, vamos verificar a lista de dispositivos disponíveis!</string>
+    <string name="slide_title_4_bt_conect">Selecione o <b>V-Timer</b>, para conectar ele com o seu celular!</string>
+    <string name="slide_title_4_bt_desconect">Aperte o botão para ligar o seu bluetooth!</string>
+    <string name="slide_btn_title_4">Ligar bluetooth</string>
+    <string name="slide_error_message_4">Para proseguir, é importante a liberação do uso do bluetooth.</string>
+    <string name="slide_dialog_title_4">Tudo pronto!</string>
+
+    <!-- Sessão: Fragments -->
+
+    <!-- Alarme -->
+    <string name="btn_title_add_alarme">Adicionar novo alarme</string>
+    <string name="btn_title_excluir_alarme">Excluir alarme</string>
+
+    <!-- Relógio -->
+    <string name="date_init_relogio">Domingo, 22 de Abril</string>
+
+    <!-- Cronômetro -->
+    <string name="btn_title_iniciar_crono">Iniciar</string>
+    <string name="btn_title_pausar_crono">Pausar</string>
+    <string name="btn_title_zerar_crono">Zerar</string>
+    <string name="btn_title_retornar_crono">Retornar</string>
+    <string name="txt_description_crono">Clique no botão \"iniciar\" para começar a contagem do cronômetro.</string>
+
+    <!-- Drawer - Títulos -->
+    <string name="drawer_menu_txt_vtimer">V-Timer</string>
+    <string name="drawer_menu_txt_config">Configurações</string>
+    <string name="drawer_menu_txt_suporte">Suporte</string>
+    <string name="drawer_menu_txt_ajuda">Ajuda</string>
+
+    <!-- V-Timer ( Status ) -->
+    <string name="page_title_vtimer_status">Status do V-Timer</string>
+    <string name="btn_title_teste_vtimer">Testar conexão</string>
+
+    <!-- V-Timer ( Lista Bt ) -->
+    <string name="page_title_vtimer_list_bt">Ache o V-Timer!</string>
+    <string name="value_init_list_bt">V-Timer</string>
+
+    <!-- Sessão: Activity´s -->
+
+    <!-- Configurações -->
+    <string name="page_title_config">Configurações</string>
+    <string name="title_config">Alarmes</string>
+    <string name="title_vibrar_config">Parar de vibrar depois de</string>
+    <string name="value1_vibrar_inicial_config">5 minutes</string>
+    <string name="title_soneca_config">Duração da soneca</string>
+    <string name="value2_soneca_inicial_config">10 minutes</string>
+    <string name="subtitle_aumentar_vibracoes_config">Aumentar gradualmente a vibração</string>
+    <string name="title_niveis_vibracoes">Níveis de vibração</string>
+    <string name="nivel_1_config">1</string>
+    <string name="nivel_2_config">2</string>
+    <string name="nivel_3_config">3</string>
+
+    <!-- Ajuda -->
+    <string name="page_title_ajuda">Ajuda</string>
+    <string name="title_artigos_ajuda">Artigos</string>
+    <string name="ic_descrption_artigos_ajuda">Icone artigo</string>
+    <string name="subtitle_artigos_ajuda">Subtítulos artigo</string>
+    <string name="title_app_ajuda">Sobre o app e instituição</string>
+    <string name="ic_descrption_app_ajuda">Icone - app e instituição</string>
+    <string name="txt_subtitle_app_ajuda">Subtítulos - app e instituição</string>
+    <string name="title_list_value_init_artigos">Definir, cancelar ou adiar alarmes</string>
+
+    <!-- Ajuda ~ Dados do app (INFO) -->
+    <string name="title_nome_appinfo">Time to Sleep - App</string>
+    <string name="title_versao_appinfo">Versão 1.21.1</string>
+    <string name="ic_descrption_appinfo">Icone informação</string>
+    <string name="logo_da_empresa_descricao_appinfo">Logo da empresa</string>
+    <string name="copy_appinfo">© 2018 – 2019 Time to Sleep</string>
+    <string name="btn_title_appinfo">Licença</string>
+
+    <!-- Suporte -->
+    <string name="page_title_suporte">Suporte</string>
+    <string name="cmp_email_title_suporte">Digite seu email (opcional)</string>
+    <string name="cmp_descreva_problema_title_suporte">Descreva o problema…</string>
+    <string name="txt_description_suporte">Usaremos essas informações para nos ajudar a solucionar e melhorar sua experiência em nossos serviços!</string>
+    <string name="btn_title_enviar">Enviar</string>
+    <string name="alertdialog_btn_cancelar_ajuda">Cancelar</string>
+
+    <!-- Activity da licença -->
+    <string name="toolbar_title_licenca">https://time-to-sleep-dispositivo11.firebaseapp.com/licenca_app.html</string>
+
+</resources>

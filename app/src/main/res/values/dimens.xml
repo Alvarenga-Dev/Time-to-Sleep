@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Curvatura de bordas -->
+    <dimen name="corner_default">35dp</dimen>
+    <dimen name="padding_default">8dp</dimen>
+
+    <!-- Tamanho de fontes (Celulares) -->
+    <dimen name="size_font_maior_smartphone">16sp</dimen>
+    <dimen name="size_font_normal_smartphone">14sp</dimen>
+    <dimen name="size_font_small_smartphone">12sp</dimen>
+    <dimen name="size_v_timer_status">24sp</dimen>
+    <dimen name="size_v_timer_battery">36sp</dimen>
+    <dimen name="size_v_timer_item_list_bt">20sp</dimen>
+    <dimen name="page_title">24sp</dimen>
+
+    <!-- Botões -->
+    <dimen name="size_font_btn">16sp</dimen>
+    <dimen name="elevation_button">25dp</dimen>
+
+    <!-- Relógio e Data (Tamanho das fontes) -->
+    <dimen name="size_font_clock">54sp</dimen>
+    <dimen name="size_font_date">22sp</dimen>
+
+    <!-- Tamanho de fontes (Tablets) -->
+    <dimen name="size_font_maior_tablet">30sp</dimen>
+    <dimen name="size_font_normal_tablet">28sp</dimen>
+    <dimen name="size_font_small_tablet">24sp</dimen>
+
+    <!-- Dimensões dialog´s-->
+    <dimen name="elevation_dialog">10dp</dimen>
+    <dimen name="size_horizontal_dialog">425dp</dimen>
+    <dimen name="size_vertical_dialog">400dp</dimen>
+
+    <!-- Slides -->
+    <dimen name="size_font_slide_custom">20sp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_small">16dp</dimen>
+    <dimen name="padding_big">52dp</dimen>
+    <dimen name="padding_vtimer_item_list_bt">30dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_vtimer_status">5sp</dimen>
+
+</resources>

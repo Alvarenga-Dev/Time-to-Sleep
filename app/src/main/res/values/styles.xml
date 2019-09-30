@@ -1,0 +1,44 @@
+<resources>
+    <!-- Tema básico. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Estilazação geral. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="InputStyles" parent="Widget.AppCompat.EditText">
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+        <item name="android:colorControlActivated">@color/colorAccent</item>
+        <item name="android:colorFocusedHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/size_font_maior_smartphone</item>
+        <item name="android:backgroundTint">@color/primaryTextColor</item>
+    </style>
+
+    <style name="TextViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/size_v_timer_status</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <!-- Botões -->
+    <style name="BtnStyles" parent="Base.TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/background_btn</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">@dimen/size_font_btn</item>
+        <item name="android:elevation">@dimen/elevation_button</item>
+    </style>
+
+    <style name="PageTitleStyle" parent="TextAppearance.AppCompat">
+        <item name="android:padding">@dimen/padding_default</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">@dimen/page_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

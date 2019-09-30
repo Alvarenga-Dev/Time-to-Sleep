@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bnvItemMenuId"
+        android:icon="@drawable/ic_menu_menu"
+        android:title="@string/bottom_nav_title_menu" />
+    <item
+        android:id="@+id/bnvItemAlarmeId"
+        android:icon="@drawable/ic_menu_alarm"
+        android:title="@string/bottom_nav_title_alarmes" />
+    <item
+        android:id="@+id/bnvItemRelogioId"
+        android:icon="@drawable/ic_menu_clock"
+        android:title="@string/bottom_nav_title_relogio" />
+    <item
+        android:id="@+id/bnvItemCronometroId"
+        android:icon="@drawable/ic_menu_timer"
+        android:title="@string/bottom_nav_title_cronometro" />
+</menu>

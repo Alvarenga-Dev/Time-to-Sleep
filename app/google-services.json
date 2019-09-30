@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "641156544698",
+    "firebase_url": "https://time-to-sleep-dispositivo11.firebaseio.com",
+    "project_id": "time-to-sleep-dispositivo11",
+    "storage_bucket": "time-to-sleep-dispositivo11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641156544698:android:b6c8b98864e5c9ca",
+        "android_client_info": {
+          "package_name": "com.llucasallvarenga.timetosleep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641156544698-0u376tav75tp42oioo6f7argq66kcoad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.llucasallvarenga.timetosleep",
+            "certificate_hash": "f575beaa18279ca65318a4eaecf9917020184ff7"
+          }
+        },
+        {
+          "client_id": "641156544698-so2tcl1037vr04n3pkana2rvuk799bka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.llucasallvarenga.timetosleep",
+            "certificate_hash": "3ab1117de934e92012ed23b1a5ae4ec5f69c7b39"
+          }
+        },
+        {
+          "client_id": "641156544698-bduic59t07f1m91r39isvag5oi558thb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYQffA5k8tr2yPwBueniXtE3WW9PHuqNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641156544698-bduic59t07f1m91r39isvag5oi558thb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

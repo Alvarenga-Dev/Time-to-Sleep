@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Cores primárias -->
+    <color name="primaryColor">#343B42</color>
+    <color name="primaryLightColor">#5E656D</color>
+    <color name="primaryDarkColor">#0E151B</color>
+    <color name="primaryTextColor">#FFFFFF</color>
+
+    <!-- Cores secundárias -->
+    <color name="secondaryColor">#54D0DD</color>
+    <color name="secondaryDarkColor">#009FAB</color>
+    <color name="colorAccent">#54D0DD</color>
+
+    <!-- Cores Auxiliares -->
+    <color name="errorColor">#EC2206</color>
+    
+    <!-- Cores Status -->
+    <color name="veryNiceStatusColor">#217D30</color>
+    <color name="NiceStatusColor">#89AA1B</color>
+    <color name="badniceStatusColor">#DFC515</color>
+    <color name="badStatusColor">#7D2121</color>
+
+    <!-- Slides -->
+    <color name="colorSlidePar">#54D0DD</color>
+    <color name="colorSlideImpar">#343B42</color>
+    <color name="colorBtnSlide">#486B6B6B</color>
+</resources>

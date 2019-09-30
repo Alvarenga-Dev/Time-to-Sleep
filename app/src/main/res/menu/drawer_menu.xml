@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/drawerSettingItemId"
+        android:icon="@drawable/ic_drawer_settings"
+        android:title="@string/drawer_menu_txt_config" />
+    <item
+        android:id="@+id/drawerVtimerItemId"
+        android:icon="@drawable/ic_drawer_vtimer"
+        android:title="@string/drawer_menu_txt_vtimer" />
+    <item
+        android:id="@+id/drawerHelpItemId"
+        android:icon="@drawable/ic_drawer_help"
+        android:title="@string/drawer_menu_txt_ajuda" />
+    <item
+        android:id="@+id/drawerSupportItemId"
+        android:icon="@drawable/ic_drawer_suport"
+        android:title="@string/drawer_menu_txt_suporte" />
+</menu>
