@@ -14,6 +14,7 @@ public class Preferences {
     private static final String ALERTDIALOGSLEEP = "tts.alertdialog.sleep";
     private static final String SEEKBARPROGRESS = "tts.seekbar.progress";
     private static final String SWICTHINCREASE = "tts.swicth.increase";
+    private static final String MACADRESS = "tts.mac.adress.bt";
     private static final String INTROSCREENS = "tts.intro.screens";
 
     public Preferences(Context context) {
@@ -40,17 +41,20 @@ public class Preferences {
         editor.commit();
     }
 
+    public void saveMacAdressBt(String macAdress){
+        editor.putString(MACADRESS, macAdress);
+        editor.commit();
+    }
+
     public void saveIntroScreens(boolean passedOn){
         editor.putBoolean(INTROSCREENS, passedOn);
         editor.commit();
     }
     //Métodos de recuperação de dados do sharedPreferences
-    public String getAlertDialogStopVibration(){
-        return preferences.getString(ALERTDIALOGSTOPVIBRATION,"5 minutos");
-    }
-    public String getAlertDialogSleep(){
-        return preferences.getString(ALERTDIALOGSLEEP,"10 minutos");
-    }
+    public String getAlertDialogStopVibration(){ return preferences.getString(ALERTDIALOGSTOPVIBRATION,"5 minutos"); }
+
+    public String getAlertDialogSleep(){ return preferences.getString(ALERTDIALOGSLEEP,"10 minutos"); }
+
     public int getSeekBarProgress(){
         return preferences.getInt(SEEKBARPROGRESS, 0);
     }
@@ -58,6 +62,8 @@ public class Preferences {
     public boolean getSwicthIncrease(){
         return preferences.getBoolean(SWICTHINCREASE, false);
     }
+
+    public String getMacadress() { return preferences.getString(MACADRESS, "Nenhum Dispositivo Conectado"); }
 
     public boolean getIntroScreens(){
         return preferences.getBoolean(INTROSCREENS, false);
