@@ -88,7 +88,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:padding="5dp"
-                android:text="@string/alertdialog_btn_cancelar_ajuda"
+                android:text="@string/alertdialog_btn_canceled_help"
                 android:textAlignment="textEnd"
                 android:textColor="@color/secondaryColor"
                 android:textSize="@dimen/size_font_btn"

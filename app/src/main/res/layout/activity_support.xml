@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
-                android:text="@string/page_title_suporte"
+                android:text="@string/page_title_support"
                 app:layout_constraintBottom_toBottomOf="@+id/btnBackSettingsId"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/btnBackSettingsId" />
@@ -77,7 +77,7 @@
                         style="@style/InputStyles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="@string/cmp_email_title_suporte" />
+                        android:hint="@string/hint_input_mail_support" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -96,7 +96,7 @@
                         style="@style/InputStyles"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cmp_descreva_problema_title_suporte" />
+                        android:hint="@string/hint_input_descripiton_support" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -106,7 +106,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="48dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@string/txt_description_suporte"
+                    android:text="@string/txt_description_support"
                     android:textAlignment="center"
                     android:textColor="@color/primaryTextColor"
                     android:textSize="@dimen/size_font_maior_smartphone"
@@ -123,7 +123,7 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="32dp"
-                    android:text="@string/btn_title_enviar"
+                    android:text="@string/btn_title_send"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

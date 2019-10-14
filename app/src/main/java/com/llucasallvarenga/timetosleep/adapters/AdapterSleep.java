@@ -16,21 +16,19 @@ import java.util.ArrayList;
 public class AdapterSleep extends RecyclerView.Adapter<AdapterSleep.ViewHolder> {
 
     private ArrayList<SleepOptions> sleepOptions;
-    private Context context;
     private OnItemClickListener listener;
 
     public interface OnItemClickListener{ void onItemClick(int position);}
     public void setOnClickListener(OnItemClickListener listener){ this.listener = listener; }
 
-    public AdapterSleep(Context context, ArrayList<SleepOptions> sleepOptions) {
-        this.context = context;
+    public AdapterSleep(ArrayList<SleepOptions> sleepOptions) {
         this.sleepOptions = sleepOptions;
     }
 
     @NonNull
     @Override
     public AdapterSleep.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_opcoes_sleep, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_options_sleep, parent,false);
         return new ViewHolder(view, listener);
     }
 

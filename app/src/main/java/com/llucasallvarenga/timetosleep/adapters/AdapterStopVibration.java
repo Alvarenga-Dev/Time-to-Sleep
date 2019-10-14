@@ -15,14 +15,12 @@ import java.util.ArrayList;
 
 public class AdapterStopVibration extends RecyclerView.Adapter<AdapterStopVibration.ViewHolder> {
 
-    private Context context;
     private ArrayList<StopVibratingOptions> stopVibratingOptions; private OnItemClickListener listener;
 
     public interface OnItemClickListener{ void onItemClick(int position);}
     public void setOnClickListener(OnItemClickListener listener){ this.listener = listener; }
 
-    public AdapterStopVibration(Context context, ArrayList<StopVibratingOptions> stopVibratingOptions) {
-        this.context = context;
+    public AdapterStopVibration(ArrayList<StopVibratingOptions> stopVibratingOptions) {
         this.stopVibratingOptions = stopVibratingOptions;
     }
 
@@ -30,7 +28,7 @@ public class AdapterStopVibration extends RecyclerView.Adapter<AdapterStopVibrat
     @Override
     public AdapterStopVibration.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_opcoes_stop_vibration, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_options_stop_vibration, parent, false);
         return new ViewHolder(view, listener);
 
     }

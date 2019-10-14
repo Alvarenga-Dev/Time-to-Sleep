@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/chronometerValueId" />
 
         <TextView
-            android:id="@+id/div"
+            android:id="@+id/divAlarmId"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/div" />
+            app:layout_constraintTop_toBottomOf="@+id/divAlarmId" />
 
         <TextView
             android:id="@+id/tvDescriptionChronometerId"
@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/div" />
+            app:layout_constraintTop_toBottomOf="@+id/divAlarmId" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

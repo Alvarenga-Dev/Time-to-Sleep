@@ -19,7 +19,10 @@ import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.adapters.AdapterStopVibration;
 import com.llucasallvarenga.timetosleep.adapters.StopVibratingOptions;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AlertDialogStopVibration extends AppCompatDialogFragment {
 
@@ -38,10 +41,11 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
             "Nunca"
     };
 
+    @NotNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder( this.getActivity() );
+        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(this.getActivity()));
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         View view =  inflater.inflate(R.layout.alert_dialog_stop_vibration, null);
@@ -57,7 +61,7 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         listaSettar();
 
-        AdapterStopVibration adapter = new AdapterStopVibration(this.getActivity(), stopVibratingOptions);
+        AdapterStopVibration adapter = new AdapterStopVibration(stopVibratingOptions);
         adapter.setOnClickListener(new AdapterStopVibration.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {

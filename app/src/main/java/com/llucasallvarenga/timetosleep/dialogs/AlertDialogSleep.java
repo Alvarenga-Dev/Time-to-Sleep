@@ -19,7 +19,10 @@ import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.adapters.AdapterSleep;
 import com.llucasallvarenga.timetosleep.adapters.SleepOptions;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AlertDialogSleep extends AppCompatDialogFragment{
 
@@ -41,10 +44,11 @@ public class AlertDialogSleep extends AppCompatDialogFragment{
                 "28 minutos", "29 minutos", "30 minutos"
         };
 
+        @NotNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder( getActivity() );
+            AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
             LayoutInflater inflater = getActivity().getLayoutInflater();
             View view = inflater.inflate(R.layout.alert_dialog_sleep, null);
 
@@ -59,7 +63,7 @@ public class AlertDialogSleep extends AppCompatDialogFragment{
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager( new LinearLayoutManager( this.getActivity() ) );
             setList();
-            AdapterSleep adapter = new AdapterSleep(this.getActivity(), sleepOptions);
+            AdapterSleep adapter = new AdapterSleep(sleepOptions);
             adapter.setOnClickListener(new AdapterSleep.OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {

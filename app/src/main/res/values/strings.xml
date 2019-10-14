@@ -26,11 +26,14 @@
     <!-- Sessão: Fragments -->
 
     <!-- Alarme -->
-    <string name="btn_title_add_alarme">Adicionar novo alarme</string>
-    <string name="btn_title_excluir_alarme">Excluir alarme</string>
+    <string name="btn_title_add_alarm">Adicionar novo alarme</string>
+    <string name="value_init_hour_alarm">16:00</string>
+    <string name="on_alarm">Ligado</string>
+    <string name="off_alarm">Desligado</string>
+    <string name="btn_title_delete_alarm">Excluir alarme</string>
 
     <!-- Relógio -->
-    <string name="date_init_relogio">Domingo, 22 de Abril</string>
+    <string name="date_init_clock">Domingo, 22 de Abril</string>
 
     <!-- Cronômetro -->
     <string name="btn_title_iniciar_crono">Iniciar</string>
@@ -87,12 +90,12 @@
     <string name="btn_title_appinfo">Licença</string>
 
     <!-- Suporte -->
-    <string name="page_title_suporte">Suporte</string>
-    <string name="cmp_email_title_suporte">Digite seu email (opcional)</string>
-    <string name="cmp_descreva_problema_title_suporte">Descreva o problema…</string>
-    <string name="txt_description_suporte">Usaremos essas informações para nos ajudar a solucionar e melhorar sua experiência em nossos serviços!</string>
-    <string name="btn_title_enviar">Enviar</string>
-    <string name="alertdialog_btn_cancelar_ajuda">Cancelar</string>
+    <string name="page_title_support">Suporte</string>
+    <string name="hint_input_mail_support">Digite seu email (opcional)</string>
+    <string name="hint_input_descripiton_support">Descreva o problema…</string>
+    <string name="txt_description_support">Usaremos essas informações para nos ajudar a solucionar e melhorar sua experiência em nossos serviços!</string>
+    <string name="btn_title_send">Enviar</string>
+    <string name="alertdialog_btn_canceled_help">Cancelar</string>
 
     <!-- Activity da licença -->
     <string name="toolbar_title_licenca">https://time-to-sleep-dispositivo11.firebaseapp.com/licenca_app.html</string>
