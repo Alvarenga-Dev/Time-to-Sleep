@@ -2,11 +2,13 @@ package com.llucasallvarenga.timetosleep.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -21,10 +23,7 @@ import java.util.ArrayList;
 public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder> {
 
     private ArrayList<Alarm> alarms;
-    private OnItemClickListener listener;
 
-    public interface OnItemClickListener{ void onItemClick(int position); }
-    public void setOnItemClickListener(OnItemClickListener listener){ this.listener = listener; }
 
     public AdapterAlarms(ArrayList<Alarm> alarms) {
         this.alarms = alarms;
@@ -36,7 +35,7 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_alarm, parent, false);
 
-        return new ViewHolder(view, listener);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -44,7 +43,7 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
         holder.hourAlarm.setText(MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMiinuteDay()));
 
-        if (position == ( getItemCount() - 1 ) ) holder.divAlarm.setBackgroundColor(Color.TRANSPARENT);
+        if (position == ( getItemCount() - 1 ) ) holder.divContainer.setBackgroundColor(Color.TRANSPARENT);
 
     }
 
@@ -55,28 +54,19 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView hourAlarm, divAlarm;
+        TextView hourAlarm, divAlarm, divContainer;
         Switch setAlarm;
         ConstraintLayout btnDelete;
 
-        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             hourAlarm = itemView.findViewById(R.id.hourAlarmTvId);
             divAlarm = itemView.findViewById(R.id.divAlarmId);
+            divContainer = itemView.findViewById(R.id.divAlarmContainerId);
             setAlarm = itemView.findViewById(R.id.setAlarmSwId);
             btnDelete = itemView.findViewById(R.id.btnDeleteAlarmId);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null){
-                        int positionRcy = getAdapterPosition();
-                            if (positionRcy != RecyclerView.NO_POSITION)
-                                listener.onItemClick(positionRcy);
-                    }
-                }
-            });
 
         }
     }

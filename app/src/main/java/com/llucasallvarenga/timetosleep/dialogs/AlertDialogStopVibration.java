@@ -52,8 +52,8 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
         builder.setView(view);
         final AlertDialog alertDialog = builder.create();
 
-        cardView = view.findViewById(R.id.conteinerAlertPararVbId);
-        btnCancel = view.findViewById(R.id.btnStopVibrationCancelId);
+        cardView = view.findViewById(R.id.containerTimePickerId);
+        btnCancel = view.findViewById(R.id.btnCanceledAddAlarmId);
         recyclerView = view.findViewById(R.id.rcyOptionsStopVibrationId);
         stopVibratingOptions = new ArrayList<>();
 
@@ -128,7 +128,7 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
 
 
     @Override
-    public void onAttach(Context context) { //Método que notifica a ConfigActivity do eveto de recuperação do texto.
+    public void onAttach(Context context) { //Método que notifica a ConfigActivity do evento de recuperação do texto.
         super.onAttach(context);
 
         try{

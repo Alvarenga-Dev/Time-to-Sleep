@@ -4,6 +4,7 @@
     <!-- Cores primárias -->
     <color name="primaryColor">#343B42</color>
     <color name="primaryLightColor">#5E656D</color>
+    <color name="primaryLightierColor">#DDD6D6</color>
     <color name="primaryDarkColor">#0E151B</color>
     <color name="primaryTextColor">#FFFFFF</color>
 

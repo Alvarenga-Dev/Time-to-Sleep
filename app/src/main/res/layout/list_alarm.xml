@@ -30,29 +30,30 @@
         app:layout_constraintTop_toTopOf="@+id/hourAlarmTvId" />
 
     <TextView
-        android:id="@+id/divAlarmId"
+        android:id="@+id/divAlarmContainerId"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:background="@color/primaryLightColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourAlarmTvId" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnDeleteAlarmId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/divAlarmContainerId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divAlarmId">
+        app:layout_constraintTop_toBottomOf="@+id/hourAlarmTvId">
 
         <TextView
             android:id="@+id/deleteTv"
@@ -62,7 +63,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/btn_title_delete_alarm"
+            android:text="@string/btn_alert_title_delete_alarm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/icDelete"
@@ -72,7 +73,7 @@
             android:id="@+id/icDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/btn_title_delete_alarm"
+            android:contentDescription="@string/btn_alert_title_delete_alarm"
             android:tint="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="@+id/deleteTv"
             app:layout_constraintStart_toStartOf="parent"

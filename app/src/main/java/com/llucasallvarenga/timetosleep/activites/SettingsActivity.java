@@ -19,7 +19,8 @@ import com.llucasallvarenga.timetosleep.dialogs.AlertDialogSleep;
 import com.llucasallvarenga.timetosleep.dialogs.AlertDialogStopVibration;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
-public class SettingsActivity extends AppCompatActivity implements AlertDialogStopVibration.AlertDialogListener, AlertDialogSleep.AlertDialogListener  {
+public class SettingsActivity extends AppCompatActivity implements
+        AlertDialogStopVibration.AlertDialogListener, AlertDialogSleep.AlertDialogListener  {
 
     private ImageView btnReturn;
     private SeekBar vibrationLevel;

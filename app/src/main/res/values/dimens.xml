@@ -28,10 +28,10 @@
     <dimen name="size_font_normal_tablet">28sp</dimen>
     <dimen name="size_font_small_tablet">24sp</dimen>
 
-    <!-- Dimensões dialog´s-->
+    <!-- dialog´s-->
     <dimen name="elevation_dialog">10dp</dimen>
-    <dimen name="size_horizontal_dialog">425dp</dimen>
-    <dimen name="size_vertical_dialog">400dp</dimen>
+    <dimen name="size_default_dialog">400dp</dimen>
+    <dimen name="size_time_picker_dialog">475dp</dimen>
 
     <!-- Slides -->
     <dimen name="size_font_slide_custom">20sp</dimen>
@@ -43,5 +43,8 @@
 
     <!-- Elevation -->
     <dimen name="elevation_vtimer_status">5sp</dimen>
+
+    <!-- Alarm Container -->
+    <dimen name="alarm_container_height">120dp</dimen>
 
 </resources>
