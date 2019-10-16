@@ -70,6 +70,7 @@
                     android:text="@string/title_config"
                     android:textSize="@dimen/size_font_normal_smartphone"
                     android:textStyle="bold"
+                    android:textColor="@color/primaryTextColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -198,6 +199,7 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/nivel_1_config"
                     android:textSize="@dimen/size_font_normal_smartphone"
+                    android:textColor="@color/primaryTextColor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/progressVibrationId" />
 

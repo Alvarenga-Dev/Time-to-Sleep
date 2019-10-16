@@ -2,9 +2,12 @@ package com.llucasallvarenga.timetosleep.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.llucasallvarenga.timetosleep.utils.Consts;
+
+import java.util.ArrayList;
 
 public class DatabaseAlarmController {
 
@@ -21,9 +24,58 @@ public class DatabaseAlarmController {
         ContentValues values = new ContentValues();
 
         values.put( Consts.HOUR_OF_DAY, alarm.getHourDay() );
-        values.put( Consts.MINUTE_OF_DAY, alarm.getMiinuteDay() );
+        values.put( Consts.MINUTE_OF_DAY, alarm.getMinuteDay() );
 
         return sql.insert(Consts.TABLE_NAME, null, values) > 0;
+
+    }
+
+    public ArrayList<Alarm> read() {
+        ArrayList<Alarm> alarms = new ArrayList<>();
+
+        Cursor cursor = sql.rawQuery(
+                "SELECT " +
+                        Consts.ID + "," +
+                        Consts.HOUR_OF_DAY  +  "," +
+                        Consts.MINUTE_OF_DAY + " FROM "+
+                        Consts.TABLE_NAME ,
+                null);
+
+        int indexColumnId = cursor.getColumnIndex(Consts.ID);
+        int indexColumnHourOfDay = cursor.getColumnIndex(Consts.HOUR_OF_DAY);
+        int indexColumnMinuteOfDay = cursor.getColumnIndex(Consts.MINUTE_OF_DAY);
+
+        while( cursor.moveToNext() ) {
+            Alarm alarm = new Alarm();
+            alarm.setId(indexColumnId);
+            alarm.setHourDay(indexColumnHourOfDay);
+            alarm.setMinuteDay(indexColumnMinuteOfDay);
+            alarms.add(alarm);
+        }
+
+        cursor.close();
+
+        return alarms;
+
+    }
+
+    public Alarm readLastItem() {
+
+        Cursor cursor = sql.rawQuery("SELECT * FROM " + Consts.TABLE_NAME + " ORDER BY ID DESC", null);
+
+        int indexColumnId = cursor.getColumnIndex(Consts.ID);
+        int indexColumnHourOfDay = cursor.getColumnIndex(Consts.HOUR_OF_DAY);
+        int indexColumnMinuteOfDay = cursor.getColumnIndex(Consts.MINUTE_OF_DAY);
+
+        if ( cursor.moveToFirst() ) {
+            int id = cursor.getInt(indexColumnId);
+            int hour = cursor.getInt(indexColumnHourOfDay);
+            int minute = cursor.getInt(indexColumnMinuteOfDay);
+            cursor.close();
+            return new Alarm(id, hour, minute);
+        }
+
+        return null;
 
     }
 

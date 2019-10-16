@@ -12,6 +12,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/title_list_value_init_artigos"
+        android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/size_font_normal_smartphone"
         app:layout_constraintBottom_toBottomOf="@+id/ivIconArticlesId"
         app:layout_constraintEnd_toEndOf="parent"

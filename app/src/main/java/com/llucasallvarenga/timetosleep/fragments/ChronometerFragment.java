@@ -35,12 +35,7 @@ public class ChronometerFragment extends Fragment {
         btnReset = view.findViewById(R.id.btnResetId);
         tvDescriptionChronometer = view.findViewById(R.id.tvDescriptionChronometerId);
 
-        btnChronometer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cronometro();
-            }
-        });
+        btnChronometer.setOnClickListener(v -> cronometro());
 
         return view;
     }
@@ -61,15 +56,12 @@ public class ChronometerFragment extends Fragment {
             pauseOff = SystemClock.elapsedRealtime() - chronometer.getBase();
             chronometerStarted = false;
 
-            btnReset.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    chronometer.setBase(SystemClock.elapsedRealtime());
-                    pauseOff = 0;
-                    btnChronometer.setText(R.string.btn_title_iniciar_crono);
-                    btnReset.setVisibility(View.INVISIBLE);
-                    tvDescriptionChronometer.setVisibility(View.VISIBLE);
-                }
+            btnReset.setOnClickListener(v -> {
+                chronometer.setBase(SystemClock.elapsedRealtime());
+                pauseOff = 0;
+                btnChronometer.setText(R.string.btn_title_iniciar_crono);
+                btnReset.setVisibility(View.INVISIBLE);
+                tvDescriptionChronometer.setVisibility(View.VISIBLE);
             });
         }
     }

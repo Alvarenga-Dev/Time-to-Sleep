@@ -45,28 +45,25 @@ public class AdapterInformations extends RecyclerView.Adapter<AdapterInformation
         return informations.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivIconInformation;
         TextView tvTitleInformation;
         TextView divInformation;
 
-        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             ivIconInformation = itemView.findViewById(R.id.ivInformationsId);
             tvTitleInformation = itemView.findViewById(R.id.informationId);
             divInformation = itemView.findViewById(R.id.divInformationId);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener(view -> {
 
-                    if (listener != null){
-                        int positionRcy = getAdapterPosition();
-                            if (positionRcy != RecyclerView.NO_POSITION)
-                                listener.onItemClick(positionRcy);
-                    }
+                if (listener != null){
+                    int positionRcy = getAdapterPosition();
+                        if (positionRcy != RecyclerView.NO_POSITION)
+                            listener.onItemClick(positionRcy);
                 }
             });
         }

@@ -32,20 +32,10 @@ public class SupportActivity extends AppCompatActivity {
         inputMail = findViewById(R.id.inputMailId);
         inputDescriptionProblem = findViewById(R.id.inputDescriptionProblemId);
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnReturn.setOnClickListener(v -> finish());
 
 
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verificationInput();
-            }
-        });
+        btnSend.setOnClickListener(v -> verificationInput());
 
     }
 

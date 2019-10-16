@@ -13,6 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/value_init_hour_alarm"
+        android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/size_hour_alarm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +65,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/btn_alert_title_delete_alarm"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/icDelete"

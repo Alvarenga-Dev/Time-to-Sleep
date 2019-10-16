@@ -43,27 +43,19 @@ public class VTimerListBtFragment extends Fragment {
         listBtRcy = view.findViewById(R.id.rcyListBtId);
         devices = new ArrayList<>();
 
-        btnBackSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-            }
-        });
+        btnBackSettings.setOnClickListener(v -> getActivity().finish());
 
         listBtRcy.setHasFixedSize(true);
         listBtRcy.setLayoutManager(new LinearLayoutManager( getActivity() ));
         addComponents();
         AdapterDeviceListBt adapterDeviceListBt = new AdapterDeviceListBt(devices);
-        adapterDeviceListBt.setOnClickListener(new AdapterDeviceListBt.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                switch (position){
-                    case 0:
-                        Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
-                }
+        adapterDeviceListBt.setOnClickListener(position -> {
+            switch (position){
+                case 0:
+                    Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+                    break;
+                case 1:
+                    Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
             }
         });
 

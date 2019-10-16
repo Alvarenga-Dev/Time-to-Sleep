@@ -6,8 +6,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -51,30 +49,19 @@ public class SettingsActivity extends AppCompatActivity implements
         final Preferences preferences = new Preferences(SettingsActivity.this);
 
         //btn return
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnReturn.setOnClickListener(v -> finish());
 
 
         //values - Stop vibration
-        conteinerVibrationStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialogStopVibration alertDialogStopVibration = new AlertDialogStopVibration();
-                alertDialogStopVibration.show(getSupportFragmentManager(), "AlertDialog para opcões para quando parar de vibrar o V-timer.");
-            }
+        conteinerVibrationStop.setOnClickListener(v -> {
+            AlertDialogStopVibration alertDialogStopVibration = new AlertDialogStopVibration();
+            alertDialogStopVibration.show(getSupportFragmentManager(), "AlertDialog para opcões para quando parar de vibrar o V-timer.");
         });
         vibrationsMinutes.setText( preferences.getAlertDialogStopVibration() );
         //Valores - Soneca
-        conteinerSleep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialogSleep alertDialogSleep = new AlertDialogSleep();
-                alertDialogSleep.show(getSupportFragmentManager(), "AlertDialog para opcões do modo soneca do V-timer.");
-            }
+        conteinerSleep.setOnClickListener(v -> {
+            AlertDialogSleep alertDialogSleep = new AlertDialogSleep();
+            alertDialogSleep.show(getSupportFragmentManager(), "AlertDialog para opcões do modo soneca do V-timer.");
         });
         sleepMinutes.setText( preferences.getAlertDialogSleep() );
         //seekBar
@@ -96,14 +83,11 @@ public class SettingsActivity extends AppCompatActivity implements
         });
         //Swicth aumentar vibração
         allowIncreaseVibration.setChecked(preferences.getSwicthIncrease());
-        allowIncreaseVibration.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    preferences.saveSwicthIncrease(true);
-                }else{
-                    preferences.saveSwicthIncrease(false);
-                }
+        allowIncreaseVibration.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked){
+                preferences.saveSwicthIncrease(true);
+            }else{
+                preferences.saveSwicthIncrease(false);
             }
         });
     }

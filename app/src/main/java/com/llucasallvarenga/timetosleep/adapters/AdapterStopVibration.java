@@ -1,6 +1,5 @@
 package com.llucasallvarenga.timetosleep.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,24 +44,21 @@ public class AdapterStopVibration extends RecyclerView.Adapter<AdapterStopVibrat
         return stopVibratingOptions.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvStopVibration;
 
-        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             tvStopVibration = itemView.findViewById(R.id.tvDisplayStopVibrationId);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener(view -> {
 
-                    if (listener != null){
-                        int positionRcy = getAdapterPosition();
-                        if (positionRcy != RecyclerView.NO_POSITION)
-                            listener.onItemClick(positionRcy);
-                    }
+                if (listener != null){
+                    int positionRcy = getAdapterPosition();
+                    if (positionRcy != RecyclerView.NO_POSITION)
+                        listener.onItemClick(positionRcy);
                 }
             });
 

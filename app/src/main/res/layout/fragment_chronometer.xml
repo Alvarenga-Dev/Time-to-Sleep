@@ -22,6 +22,7 @@
             android:gravity="center|clip_vertical|center_horizontal"
             android:textAlignment="center"
             android:textSize="@dimen/size_font_clock"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,6 +63,7 @@
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/primaryTextColor"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +80,7 @@
             android:text="@string/txt_description_crono"
             android:textAlignment="center"
             android:textSize="@dimen/size_font_normal_smartphone"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

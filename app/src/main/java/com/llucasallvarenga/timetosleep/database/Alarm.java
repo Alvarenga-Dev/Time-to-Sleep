@@ -6,14 +6,14 @@ public class Alarm implements Serializable {
 
     private int id;
     private int hourDay;
-    private int miinuteDay;
+    private int minuteDay;
 
     public Alarm(){}
 
-    public Alarm(int id, int hourDay, int miinuteDay) {
+    public Alarm(int id, int hourDay, int minuteDay) {
         this.id = id;
         this.hourDay = hourDay;
-        this.miinuteDay = miinuteDay;
+        this.minuteDay = minuteDay;
     }
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Alarm implements Serializable {
         this.hourDay = hourDay;
     }
 
-    public int getMiinuteDay() {
-        return miinuteDay;
+    public int getMinuteDay() {
+        return minuteDay;
     }
 
-    public void setMiinuteDay(int miinuteDay) {
-        this.miinuteDay = miinuteDay;
+    public void setMinuteDay(int minuteDay) {
+        this.minuteDay = minuteDay;
     }
 }

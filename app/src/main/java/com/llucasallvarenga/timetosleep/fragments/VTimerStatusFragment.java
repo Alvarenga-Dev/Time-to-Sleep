@@ -1,6 +1,5 @@
 package com.llucasallvarenga.timetosleep.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;
+
+import java.util.Objects;
 
 public class VTimerStatusFragment extends Fragment {
 
@@ -27,12 +27,7 @@ public class VTimerStatusFragment extends Fragment {
 
         btnBackSettings = view.findViewById(R.id.btnBackSettingsId);
 
-        btnBackSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-            }
-        });
+        btnBackSettings.setOnClickListener(v -> Objects.requireNonNull(getActivity()).finish());
 
         return view;
     }

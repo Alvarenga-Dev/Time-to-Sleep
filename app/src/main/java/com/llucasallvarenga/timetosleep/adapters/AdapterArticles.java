@@ -47,26 +47,23 @@ public class AdapterArticles extends RecyclerView.Adapter<AdapterArticles.ViewHo
         return articles.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitleArticle;
         TextView divArticles;
 
-        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             tvTitleArticle = itemView.findViewById(R.id.articleId);
             divArticles = itemView.findViewById(R.id.divArticlesId);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener(view -> {
 
-                    if (listener != null){
-                        int positionRcy = getAdapterPosition();
-                        if (positionRcy != RecyclerView.NO_POSITION)
-                            listener.onItemClick(positionRcy);
-                    }
+                if (listener != null){
+                    int positionRcy = getAdapterPosition();
+                    if (positionRcy != RecyclerView.NO_POSITION)
+                        listener.onItemClick(positionRcy);
                 }
             });
         }

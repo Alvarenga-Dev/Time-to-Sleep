@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,8 +23,7 @@ public class HelpActivity extends AppCompatActivity {
     private ImageView btnReturn;
     private ArrayList<Articles> articles;
     private ArrayList<Informations> informations;
-    private RecyclerView listaRcyArticles;
-    private RecyclerView listaRcyAbout;
+    private RecyclerView listaRcyArticles, listaRcyAbout;
 
     private String[] titleArticles = {
             "Ajustar hora, data e fuso horário",
@@ -53,12 +51,7 @@ public class HelpActivity extends AppCompatActivity {
         listaRcyAbout = findViewById(R.id.rcyInformationId);
         btnReturn = findViewById(R.id.btnBackSettingsId);
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnReturn.setOnClickListener(v -> finish());
 
 
         //Lista articles.
@@ -66,24 +59,21 @@ public class HelpActivity extends AppCompatActivity {
         listaRcyArticles.setLayoutManager( new LinearLayoutManager( HelpActivity.this ) );
         addArticles();
         AdapterArticles adapterArticles = new AdapterArticles(articles);
-        adapterArticles.setOnClickListener(new AdapterArticles.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
+        adapterArticles.setOnClickListener(position -> {
 
-                switch (position) {
-                    case 0:
-                        Toast.makeText(HelpActivity.this, "1", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Toast.makeText(HelpActivity.this, "2", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        Toast.makeText(HelpActivity.this, "3", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 3:
-                        Toast.makeText(HelpActivity.this, "4", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            switch (position) {
+                case 0:
+                    Toast.makeText(HelpActivity.this, "1", Toast.LENGTH_SHORT).show();
+                    break;
+                case 1:
+                    Toast.makeText(HelpActivity.this, "2", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    Toast.makeText(HelpActivity.this, "3", Toast.LENGTH_SHORT).show();
+                    break;
+                case 3:
+                    Toast.makeText(HelpActivity.this, "4", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
         listaRcyArticles.setAdapter(adapterArticles);
@@ -93,18 +83,15 @@ public class HelpActivity extends AppCompatActivity {
         listaRcyAbout.setLayoutManager( new LinearLayoutManager( HelpActivity.this ) );
         addInformations();
         AdapterInformations adapterInformations = new AdapterInformations(informations);
-        adapterInformations.setOnClickListener(new AdapterInformations.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
+        adapterInformations.setOnClickListener(position -> {
 
-                switch (position){
-                    case 0:
-                        Toast.makeText(HelpActivity.this, "1", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        Toast.makeText(HelpActivity.this, "2", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            switch (position){
+                case 0:
+                    Toast.makeText(HelpActivity.this, "1", Toast.LENGTH_SHORT).show();
+                    break;
+                case 1:
+                    Toast.makeText(HelpActivity.this, "2", Toast.LENGTH_SHORT).show();
+                    break;
             }
         });
         listaRcyAbout.setAdapter(adapterInformations);

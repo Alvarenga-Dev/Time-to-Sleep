@@ -2,7 +2,6 @@ package com.llucasallvarenga.timetosleep.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +22,11 @@ import java.util.ArrayList;
 public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder> {
 
     private ArrayList<Alarm> alarms;
+    private Context context;
 
-
-    public AdapterAlarms(ArrayList<Alarm> alarms) {
+    public AdapterAlarms(ArrayList<Alarm> alarms, Context context) {
         this.alarms = alarms;
+        this.context = context;
     }
 
     @NonNull
@@ -41,10 +41,17 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull AdapterAlarms.ViewHolder holder, int position) {
 
-        holder.hourAlarm.setText(MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMiinuteDay()));
+        holder.hourAlarm.setText(MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMinuteDay()));
+
+        holder.hourAlarm.setOnClickListener(view -> Toast.makeText( context , "", Toast.LENGTH_SHORT).show());
 
         if (position == ( getItemCount() - 1 ) ) holder.divContainer.setBackgroundColor(Color.TRANSPARENT);
 
+    }
+
+    public void addAlarm(Alarm alarm){
+        alarms.add(alarm);
+        notifyItemInserted( getItemCount() );
     }
 
     @Override
@@ -52,13 +59,13 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
         return alarms.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView hourAlarm, divAlarm, divContainer;
         Switch setAlarm;
         ConstraintLayout btnDelete;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             hourAlarm = itemView.findViewById(R.id.hourAlarmTvId);
@@ -70,4 +77,26 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
         }
     }
+
+    /*
+
+    private  void startAlarm(Calendar calendar) {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, MyReceiver.class );
+        PendingIntent pendingIntent = PendingIntent.getBroadcast( context , 1, intent, 0);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+
+    private void cancelAlarm(){
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, MyReceiver.class );
+        PendingIntent pendingIntent = PendingIntent.getBroadcast( context , 1, intent, 0);
+
+        if (alarmManager != null) {
+            alarmManager.cancel(pendingIntent);
+            opa.setText("Alarm canceled!");
+        }
+
+    } */
 }
