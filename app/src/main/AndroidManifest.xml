@@ -4,6 +4,7 @@
     package="com.llucasallvarenga.timetosleep">
 
     <application
+        android:name=".utils.App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

@@ -15,4 +15,7 @@ public class Consts {
     public static final String SWICTHINCREASE = "tts.swicth.increase";
     public static final String MACADRESS = "tts.mac.adress.bt";
     public static final String INTROSCREENS = "tts.intro.screens";
+    // for notification
+    public static final String CHANNEL1ID = "channel1ID";
+    public static final String CHANNEL1Name = "channel 1";
 }
