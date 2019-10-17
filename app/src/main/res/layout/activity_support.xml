@@ -96,7 +96,7 @@
                         style="@style/InputStyles"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_input_descripiton_support" />
+                        android:hint="@string/hint_input_description_support" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView

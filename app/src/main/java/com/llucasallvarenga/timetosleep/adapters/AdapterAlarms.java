@@ -2,6 +2,7 @@ package com.llucasallvarenga.timetosleep.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.database.Alarm;
+import com.llucasallvarenga.timetosleep.dialogs.AlertDialogAlarmDelete;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -43,7 +47,10 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
         holder.hourAlarm.setText(MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMinuteDay()));
 
-        holder.hourAlarm.setOnClickListener(view -> Toast.makeText( context , "", Toast.LENGTH_SHORT).show());
+        holder.hourAlarm.setOnClickListener(view ->{
+            AlertDialogAlarmDelete dialogAlarmDelete = new AlertDialogAlarmDelete();
+            dialogAlarmDelete.btnDeleteConfirm.setOnClickListener(View -> Log.i("AAAAA", "OPaAAAAaaaa"));
+        });
 
         if (position == ( getItemCount() - 1 ) ) holder.divContainer.setBackgroundColor(Color.TRANSPARENT);
 
@@ -74,13 +81,12 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
             setAlarm = itemView.findViewById(R.id.setAlarmSwId);
             btnDelete = itemView.findViewById(R.id.btnDeleteAlarmId);
 
-
         }
     }
 
     /*
 
-    private  void startAlarm(Calendar calendar) {
+    private void startAlarm(Calendar calendar) {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, MyReceiver.class );
         PendingIntent pendingIntent = PendingIntent.getBroadcast( context , 1, intent, 0);

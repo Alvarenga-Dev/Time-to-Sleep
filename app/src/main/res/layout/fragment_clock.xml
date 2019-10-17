@@ -23,6 +23,7 @@
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -52,6 +53,7 @@
             android:layout_marginEnd="24dp"
             android:textAlignment="center"
             android:textSize="@dimen/size_font_clock"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"

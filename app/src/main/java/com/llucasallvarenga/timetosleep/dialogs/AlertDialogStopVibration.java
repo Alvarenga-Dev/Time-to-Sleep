@@ -53,7 +53,7 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
         final AlertDialog alertDialog = builder.create();
 
         cardView = view.findViewById(R.id.containerTimePickerId);
-        btnCancel = view.findViewById(R.id.btnCanceledAddAlarmId);
+        btnCancel = view.findViewById(R.id.btnDeleteAlarmId);
         recyclerView = view.findViewById(R.id.rcyOptionsStopVibrationId);
         stopVibratingOptions = new ArrayList<>();
 

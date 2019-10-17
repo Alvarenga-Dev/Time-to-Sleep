@@ -2,9 +2,7 @@ package com.llucasallvarenga.timetosleep.utils;
 
 public class Consts {
     // for Database
-    public static final String DATABSE_NAME = "database.db";
-    public static final int VERSION = 1;
-    public static final String TABLE_NAME = "Alarm.db";
+    public static final String TABLE_NAME = "AlarmsDatabase";
     public static final String ID = "id";
     public static final String HOUR_OF_DAY = "hour";
     public static final String MINUTE_OF_DAY = "minute";

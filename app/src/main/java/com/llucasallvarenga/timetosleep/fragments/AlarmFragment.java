@@ -2,12 +2,14 @@ package com.llucasallvarenga.timetosleep.fragments;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class AlarmFragment extends Fragment {
 
@@ -42,6 +45,7 @@ public class AlarmFragment extends Fragment {
 
         alarmListRcy = view.findViewById(R.id.alarmListRcyId);
         btnAddAlarm = view.findViewById(R.id.btnAddAlarmId);
+        controller = new DatabaseAlarmController(Objects.requireNonNull(getActivity()).getBaseContext());
         alarms = controller.read();
         alarmsFilters.addAll(alarms);
 
@@ -52,7 +56,6 @@ public class AlarmFragment extends Fragment {
         alarmListRcy.setHasFixedSize(true);
         alarmListRcy.setNestedScrollingEnabled(false);
         adapter = new AdapterAlarms(alarmsFilters, getContext());
-
         alarmListRcy.setAdapter(adapter);
 
         return view;
@@ -72,16 +75,15 @@ public class AlarmFragment extends Fragment {
             alarm.setHourDay(hourOfDay);
             alarm.setMinuteDay(minuteOfDay);
 
-            controller = new DatabaseAlarmController( getContext() );
+            controller = new DatabaseAlarmController( Objects.requireNonNull(getActivity()).getBaseContext() );
             boolean success = controller.insert(alarm);
 
             if (success) {
-
                 Alarm alarmReturn = controller.readLastItem();
                 adapter.addAlarm(alarmReturn);
-                Snackbar.make(view, "Salvou!", Snackbar.LENGTH_SHORT).show();
-            }else{
-                Snackbar.make(view, "Veja o LOG!", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(view, "Alarme criado!", Snackbar.LENGTH_SHORT).show();
+            } else {
+                Snackbar.make(view, "Ops! Tente adicionar novamente.", Snackbar.LENGTH_SHORT).show();
             }
 
         }, hour, minute, android.text.format.DateFormat.is24HourFormat(getActivity()) );

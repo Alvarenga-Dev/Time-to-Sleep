@@ -10,19 +10,17 @@ import com.llucasallvarenga.timetosleep.utils.Consts;
 
 public class DatabaseAlarmInit extends SQLiteOpenHelper {
 
+    private static final String DATABSE_NAME = "database.db";
+    private static final int VERSION = 1;
 
     public DatabaseAlarmInit(@Nullable Context context) {
-        super(context, Consts.DATABSE_NAME, null, Consts.VERSION);
+        super(context, DATABSE_NAME, null, VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-        db.execSQL(
-                "CREATE TABLE IF NOT EXISTS " + Consts.TABLE_NAME + " (" + Consts.ID + " int primary key autoincrement, " +
-                        Consts.HOUR_OF_DAY + " int(2), " + Consts.MINUTE_OF_DAY + " int(2)" + ")"
-        );
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + Consts.TABLE_NAME +"(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                Consts.HOUR_OF_DAY + " INTEGER, "+ Consts.MINUTE_OF_DAY +" INTEGER )");
     }
 
     @Override

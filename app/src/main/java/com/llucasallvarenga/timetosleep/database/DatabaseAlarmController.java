@@ -47,9 +47,9 @@ public class DatabaseAlarmController {
 
         while( cursor.moveToNext() ) {
             Alarm alarm = new Alarm();
-            alarm.setId(indexColumnId);
-            alarm.setHourDay(indexColumnHourOfDay);
-            alarm.setMinuteDay(indexColumnMinuteOfDay);
+            alarm.setId(cursor.getInt(indexColumnId));
+            alarm.setHourDay(cursor.getInt(indexColumnHourOfDay));
+            alarm.setMinuteDay(cursor.getInt(indexColumnMinuteOfDay));
             alarms.add(alarm);
         }
 
@@ -77,6 +77,10 @@ public class DatabaseAlarmController {
 
         return null;
 
+    }
+
+    public boolean delete(int id){
+        return sql.delete(Consts.TABLE_NAME, "id = ?", new String[]{id + ""}) > 0;
     }
 
 }

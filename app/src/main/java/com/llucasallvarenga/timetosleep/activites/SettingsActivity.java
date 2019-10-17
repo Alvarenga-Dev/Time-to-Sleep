@@ -55,7 +55,7 @@ public class SettingsActivity extends AppCompatActivity implements
         //values - Stop vibration
         conteinerVibrationStop.setOnClickListener(v -> {
             AlertDialogStopVibration alertDialogStopVibration = new AlertDialogStopVibration();
-            alertDialogStopVibration.show(getSupportFragmentManager(), "AlertDialog para opcões para quando parar de vibrar o V-timer.");
+            alertDialogStopVibration.show( getSupportFragmentManager() , "AlertDialog para opcões para quando parar de vibrar o V-timer.");
         });
         vibrationsMinutes.setText( preferences.getAlertDialogStopVibration() );
         //Valores - Soneca

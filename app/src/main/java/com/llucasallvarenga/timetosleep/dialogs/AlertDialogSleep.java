@@ -227,12 +227,7 @@ public class AlertDialogSleep extends AppCompatDialogFragment{
             });
             recyclerView.setAdapter(adapter);
 
-            btnCancel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
+            btnCancel.setOnClickListener(v -> dialog.dismiss());
 
             dialog.getWindow().setBackgroundDrawable( new ColorDrawable( Color.TRANSPARENT ) );
 

@@ -30,8 +30,9 @@
     <string name="value_init_hour_alarm">16:00</string>
     <string name="on_alarm">Ligado</string>
     <string name="off_alarm">Desligado</string>
-    <string name="btn_alert_title_add_alarm">Adicionar</string>
-    <string name="btn_alert_title_delete_alarm">Excluir</string>
+    <string name="btn_alert_title_delete_alarm">Sim</string>
+    <string name="alertdialog_title_delete_alarm">Confirmar</string>
+    <string name="alertdialog_descripton_delete_alarm">Excluir alarme ?</string>
 
     <!-- Relógio -->
     <string name="date_init_clock">Domingo, 22 de Abril</string>
@@ -75,17 +76,17 @@
     <!-- Ajuda -->
     <string name="page_title_ajuda">Ajuda</string>
     <string name="title_artigos_ajuda">Artigos</string>
-    <string name="ic_descrption_artigos_ajuda">Icone artigo</string>
+    <string name="ic_description_artigos_ajuda">Icone artigo</string>
     <string name="subtitle_artigos_ajuda">Subtítulos artigo</string>
     <string name="title_app_ajuda">Sobre o app e instituição</string>
-    <string name="ic_descrption_app_ajuda">Icone - app e instituição</string>
+    <string name="ic_description_app_ajuda">Icone - app e instituição</string>
     <string name="txt_subtitle_app_ajuda">Subtítulos - app e instituição</string>
     <string name="title_list_value_init_artigos">Definir, cancelar ou adiar alarmes</string>
 
     <!-- Ajuda ~ Dados do app (INFO) -->
     <string name="title_nome_appinfo">Time to Sleep - App</string>
     <string name="title_versao_appinfo">Versão 1.21.1</string>
-    <string name="ic_descrption_appinfo">Icone informação</string>
+    <string name="ic_description_appinfo">Icone informação</string>
     <string name="logo_da_empresa_descricao_appinfo">Logo da empresa</string>
     <string name="copy_appinfo">© 2018 – 2019 Time to Sleep</string>
     <string name="btn_title_appinfo">Licença</string>
@@ -93,10 +94,13 @@
     <!-- Suporte -->
     <string name="page_title_support">Suporte</string>
     <string name="hint_input_mail_support">Digite seu email (opcional)</string>
-    <string name="hint_input_descripiton_support">Descreva o problema…</string>
+    <string name="hint_input_description_support">Descreva o problema…</string>
     <string name="txt_description_support">Usaremos essas informações para nos ajudar a solucionar e melhorar sua experiência em nossos serviços!</string>
     <string name="btn_title_send">Enviar</string>
     <string name="alertdialog_btn_canceled_help">Cancelar</string>
+
+    <!-- Descrição de imagens -->
+    <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
 
     <!-- Activity da licença -->
     <string name="toolbar_title_licenca">https://time-to-sleep-dispositivo11.firebaseapp.com/licenca_app.html</string>
