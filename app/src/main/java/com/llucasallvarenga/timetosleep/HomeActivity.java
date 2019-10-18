@@ -12,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.activites.HelpActivity;
 import com.llucasallvarenga.timetosleep.activites.SettingsActivity;
@@ -21,6 +22,7 @@ import com.llucasallvarenga.timetosleep.adapters.ViewPagerAdapter;
 import com.llucasallvarenga.timetosleep.fragments.AlarmFragment;
 import com.llucasallvarenga.timetosleep.fragments.ChronometerFragment;
 import com.llucasallvarenga.timetosleep.fragments.ClockFragment;
+import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class HomeActivity extends AppCompatActivity{
 
@@ -28,11 +30,14 @@ public class HomeActivity extends AppCompatActivity{
     private DrawerLayout drawerLayout;
     private ViewPager viewPager;
     private NavigationView navigationView;
+    private Preferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        preferences = new Preferences(HomeActivity.this);
 
         setBottomNavigationView();
         setNavigationView();
@@ -54,6 +59,12 @@ public class HomeActivity extends AppCompatActivity{
 
         bottomNavigationView.setSelectedItemId(bottomNavigationPosition);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        preferences.saveFirstRun(true);
     }
 
     public static void setupFm(FragmentManager fragmentManager, ViewPager viewPager){

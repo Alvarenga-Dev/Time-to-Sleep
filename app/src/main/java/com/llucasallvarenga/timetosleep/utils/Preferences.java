@@ -35,6 +35,11 @@ public class Preferences {
         editor.commit();
     }
 
+    public void saveFirstRun(boolean run){
+        editor.putBoolean(Consts.FIRSTRUN,run);
+        editor.commit();
+    }
+
     public void saveMacAdressBt(String macAdress){
         editor.putString(Consts.MACADRESS, macAdress);
         editor.commit();
@@ -53,9 +58,9 @@ public class Preferences {
         return preferences.getInt(Consts.SEEKBARPROGRESS, 0);
     }
 
-    public boolean getSwicthIncrease(){
-        return preferences.getBoolean(Consts.SWICTHINCREASE, false);
-    }
+    public boolean getSwicthIncrease(){ return preferences.getBoolean(Consts.SWICTHINCREASE, false); }
+
+    public boolean getFirstRun(){ return preferences.getBoolean(Consts.FIRSTRUN, true); }
 
     public String getMacadress() { return preferences.getString(Consts.MACADRESS, "Nenhum Dispositivo Conectado"); }
 

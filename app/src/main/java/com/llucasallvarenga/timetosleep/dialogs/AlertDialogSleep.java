@@ -64,165 +64,163 @@ public class AlertDialogSleep extends AppCompatDialogFragment{
             recyclerView.setLayoutManager( new LinearLayoutManager( this.getActivity() ) );
             setList();
             AdapterSleep adapter = new AdapterSleep(sleepOptions);
-            adapter.setOnClickListener(new AdapterSleep.OnItemClickListener() {
-                @Override
-                public void onItemClick(int position) {
-                    //Dentro do switch mandará instruções para o arduino. Já o texto será settado com a interface;
+            adapter.setOnClickListener(position -> {
 
-                    String minutesValue;
+                //Dentro do switch mandará instruções para o arduino. Já o texto será settado com a interface;
 
-                    switch (position){
-                        case 0:
-                            minutesValue = minutesOptions[0];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 1:
-                            minutesValue = minutesOptions[1];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 2:
-                            minutesValue = minutesOptions[2];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 3:
-                            minutesValue = minutesOptions[3];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 4:
-                            minutesValue = minutesOptions[4];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 5:
-                            minutesValue = minutesOptions[5];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 6:
-                            minutesValue = minutesOptions[6];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 7:
-                            minutesValue = minutesOptions[7];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 8:
-                            minutesValue = minutesOptions[8];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 9:
-                            minutesValue = minutesOptions[9];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 10:
-                            minutesValue = minutesOptions[10];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 11:
-                            minutesValue = minutesOptions[11];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 12:
-                            minutesValue = minutesOptions[12];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 13:
-                            minutesValue = minutesOptions[13];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 14:
-                            minutesValue = minutesOptions[14];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 15:
-                            minutesValue = minutesOptions[15];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 16:
-                            minutesValue = minutesOptions[16];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 17:
-                            minutesValue = minutesOptions[17];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 18:
-                            minutesValue = minutesOptions[18];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 19:
-                            minutesValue = minutesOptions[19];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 20:
-                            minutesValue = minutesOptions[20];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 21:
-                            minutesValue = minutesOptions[21];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 22:
-                            minutesValue = minutesOptions[22];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 23:
-                            minutesValue = minutesOptions[23];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 24:
-                            minutesValue = minutesOptions[24];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 25:
-                            minutesValue = minutesOptions[25];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 26:
-                            minutesValue = minutesOptions[26];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 27:
-                            minutesValue = minutesOptions[27];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 28:
-                            minutesValue = minutesOptions[28];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                        case 29:
-                            minutesValue = minutesOptions[29];
-                            listener.minutesSleep(minutesValue);
-                            dialog.dismiss();
-                            break;
-                    }
+                String minutesValue;
+
+                switch (position){
+                    case 0:
+                        minutesValue = minutesOptions[0];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 1:
+                        minutesValue = minutesOptions[1];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 2:
+                        minutesValue = minutesOptions[2];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 3:
+                        minutesValue = minutesOptions[3];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 4:
+                        minutesValue = minutesOptions[4];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 5:
+                        minutesValue = minutesOptions[5];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 6:
+                        minutesValue = minutesOptions[6];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 7:
+                        minutesValue = minutesOptions[7];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 8:
+                        minutesValue = minutesOptions[8];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 9:
+                        minutesValue = minutesOptions[9];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 10:
+                        minutesValue = minutesOptions[10];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 11:
+                        minutesValue = minutesOptions[11];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 12:
+                        minutesValue = minutesOptions[12];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 13:
+                        minutesValue = minutesOptions[13];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 14:
+                        minutesValue = minutesOptions[14];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 15:
+                        minutesValue = minutesOptions[15];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 16:
+                        minutesValue = minutesOptions[16];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 17:
+                        minutesValue = minutesOptions[17];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 18:
+                        minutesValue = minutesOptions[18];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 19:
+                        minutesValue = minutesOptions[19];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 20:
+                        minutesValue = minutesOptions[20];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 21:
+                        minutesValue = minutesOptions[21];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 22:
+                        minutesValue = minutesOptions[22];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 23:
+                        minutesValue = minutesOptions[23];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 24:
+                        minutesValue = minutesOptions[24];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 25:
+                        minutesValue = minutesOptions[25];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 26:
+                        minutesValue = minutesOptions[26];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 27:
+                        minutesValue = minutesOptions[27];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 28:
+                        minutesValue = minutesOptions[28];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
+                    case 29:
+                        minutesValue = minutesOptions[29];
+                        listener.minutesSleep(minutesValue);
+                        dialog.dismiss();
+                        break;
                 }
             });
             recyclerView.setAdapter(adapter);

@@ -30,7 +30,9 @@
     <string name="value_init_hour_alarm">16:00</string>
     <string name="on_alarm">Ligado</string>
     <string name="off_alarm">Desligado</string>
+    <string name="btn_title_delete_alarm">Excluir</string>
     <string name="btn_alert_title_delete_alarm">Sim</string>
+    <string name="btn_alert_title_delete_alarm_canceled">Não</string>
     <string name="alertdialog_title_delete_alarm">Confirmar</string>
     <string name="alertdialog_descripton_delete_alarm">Excluir alarme ?</string>
 

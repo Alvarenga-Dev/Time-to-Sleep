@@ -26,7 +26,10 @@ public class DatabaseAlarmController {
         values.put( Consts.HOUR_OF_DAY, alarm.getHourDay() );
         values.put( Consts.MINUTE_OF_DAY, alarm.getMinuteDay() );
 
-        return sql.insert(Consts.TABLE_NAME, null, values) > 0;
+        if ( alarm.getId() > 0 )
+            return sql.update(Consts.TABLE_NAME, values, "id = ?", new String[]{ alarm.getId() + "" }) > 0;
+        else
+            return sql.insert(Consts.TABLE_NAME, null, values) > 0;
 
     }
 

@@ -16,7 +16,7 @@ public class Alarm implements Serializable {
         this.minuteDay = minuteDay;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
