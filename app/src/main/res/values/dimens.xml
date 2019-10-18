@@ -12,6 +12,8 @@
     <dimen name="size_v_timer_status">24sp</dimen>
     <dimen name="size_v_timer_battery">36sp</dimen>
     <dimen name="size_hour_alarm">48sp</dimen>
+    <dimen name="size_font_title_alarm_stop">36sp</dimen>
+    <dimen name="size_font_value_alarm_stop">24sp</dimen>
     <dimen name="size_v_timer_item_list_bt">20sp</dimen>
     <dimen name="page_title">24sp</dimen>
 
@@ -44,7 +46,7 @@
     <!-- Elevation -->
     <dimen name="elevation_vtimer_status">5sp</dimen>
 
-    <!-- Alarm Container -->
+    <!-- Alarm -->
     <dimen name="alarm_container_height">120dp</dimen>
 
 </resources>

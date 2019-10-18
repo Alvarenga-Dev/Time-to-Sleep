@@ -34,7 +34,7 @@ public class AdapterDeviceListBt extends RecyclerView.Adapter<AdapterDeviceListB
 
     @Override
     public void onBindViewHolder(@NonNull AdapterDeviceListBt.ViewHolder holder, int position) {
-        holder.device.setText( devices.get(position).getItemBt() );
+        holder.device.setText( devices.get(position).getNameBt() );
 
         if (position == ( getItemCount() - 1 ) ) holder.divItens.setBackgroundColor(Color.TRANSPARENT);
 
@@ -45,25 +45,22 @@ public class AdapterDeviceListBt extends RecyclerView.Adapter<AdapterDeviceListB
         return devices.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView device;
         TextView divItens;
 
-        public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             device = itemView.findViewById(R.id.deviceTvId);
             divItens = itemView.findViewById(R.id.divItensListId);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        int positionRcy = getAdapterPosition();
-                            if (positionRcy != RecyclerView.NO_POSITION)
-                                listener.onItemClick(positionRcy);
-                    }
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    int positionRcy = getAdapterPosition();
+                        if (positionRcy != RecyclerView.NO_POSITION)
+                            listener.onItemClick(positionRcy);
                 }
             });
 

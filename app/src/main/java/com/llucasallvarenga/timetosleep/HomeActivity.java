@@ -12,7 +12,6 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.activites.HelpActivity;
 import com.llucasallvarenga.timetosleep.activites.SettingsActivity;
@@ -58,13 +57,8 @@ public class HomeActivity extends AppCompatActivity{
         }
 
         bottomNavigationView.setSelectedItemId(bottomNavigationPosition);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         preferences.saveFirstRun(true);
+
     }
 
     public static void setupFm(FragmentManager fragmentManager, ViewPager viewPager){

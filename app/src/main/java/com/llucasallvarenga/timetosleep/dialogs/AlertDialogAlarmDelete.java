@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -28,9 +27,11 @@ public class AlertDialogAlarmDelete extends AppCompatDialogFragment {
     private DatabaseAlarmController controller;
 
     private Alarm alarm;
+    private ArrayList<Alarm> alarms;
 
-    public AlertDialogAlarmDelete( Alarm alarm ){
+    public AlertDialogAlarmDelete( Alarm alarm, ArrayList<Alarm> alarms ){
         this.alarm = alarm;
+        this.alarms = alarms;
     }
 
     @NonNull
@@ -45,7 +46,7 @@ public class AlertDialogAlarmDelete extends AppCompatDialogFragment {
         final AlertDialog dialog = builder.create();
 
         btnDeleteConfirm = view.findViewById(R.id.btnDeleteConfirmId);
-        adapterAlarms = new AdapterAlarms();
+        adapterAlarms = new AdapterAlarms( getAlarms() );
         controller = new DatabaseAlarmController( getContext() );
 
         btnDeleteConfirm.setOnClickListener( View -> {
@@ -54,10 +55,8 @@ public class AlertDialogAlarmDelete extends AppCompatDialogFragment {
 
             if (success) {
                 adapterAlarms.deleteAlarm(getAlarm());
-                Log.i("DELETE", "Foi essa bagaça!");
                 dialog.dismiss();
             } else {
-                Log.i("DEU BOSTA", "Foi n...");
                 dialog.dismiss();
             }
 
@@ -69,7 +68,11 @@ public class AlertDialogAlarmDelete extends AppCompatDialogFragment {
 
     }
 
-    public Alarm getAlarm() {
+    private Alarm getAlarm() {
         return alarm;
+    }
+
+    public ArrayList<Alarm> getAlarms() {
+        return alarms;
     }
 }

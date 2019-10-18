@@ -51,7 +51,6 @@ public class SettingsActivity extends AppCompatActivity implements
         //btn return
         btnReturn.setOnClickListener(v -> finish());
 
-
         //values - Stop vibration
         conteinerVibrationStop.setOnClickListener(v -> {
             AlertDialogStopVibration alertDialogStopVibration = new AlertDialogStopVibration();
@@ -84,11 +83,11 @@ public class SettingsActivity extends AppCompatActivity implements
         //Swicth aumentar vibração
         allowIncreaseVibration.setChecked(preferences.getSwicthIncrease());
         allowIncreaseVibration.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked){
+            if (isChecked)
                 preferences.saveSwicthIncrease(true);
-            }else{
+            else
                 preferences.saveSwicthIncrease(false);
-            }
+
         });
     }
 

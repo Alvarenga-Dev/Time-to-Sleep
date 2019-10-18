@@ -16,6 +16,7 @@ public class Preferences {
         preferences = context.getSharedPreferences(PREFERENCES, MODE);
         editor = preferences.edit();
     }
+
     //Métodos de salvamento de dados do sharedPreferences
     public void saveAlertDialogStopVibration(String value){
         editor.putString(Consts.ALERTDIALOGSTOPVIBRATION,value);
@@ -40,8 +41,18 @@ public class Preferences {
         editor.commit();
     }
 
+    public void saveOnAlarm(boolean onAlarm) {
+        editor.putBoolean(Consts.ONALARM, onAlarm );
+        editor.commit();
+    }
+
     public void saveMacAdressBt(String macAdress){
-        editor.putString(Consts.MACADRESS, macAdress);
+        editor.putString(Consts.MACADDRESS, macAdress);
+        editor.commit();
+    }
+
+    public void saveNameDevice(String nameBt){
+        editor.putString(Consts.NAME_BT, nameBt);
         editor.commit();
     }
 
@@ -49,22 +60,27 @@ public class Preferences {
         editor.putBoolean(Consts.INTROSCREENS, passedOn);
         editor.commit();
     }
-    //Métodos de recuperação de dados do sharedPreferences
-    public String getAlertDialogStopVibration(){ return preferences.getString(Consts.ALERTDIALOGSTOPVIBRATION,"5 minutos"); }
 
-    public String getAlertDialogSleep(){ return preferences.getString(Consts.ALERTDIALOGSLEEP,"10 minutos"); }
+    //Métodos de recuperação de dados do sharedPreferences
+    public String getAlertDialogStopVibration() { return preferences.getString(Consts.ALERTDIALOGSTOPVIBRATION,"5 minutos"); }
+
+    public String getAlertDialogSleep() { return preferences.getString(Consts.ALERTDIALOGSLEEP,"10 minutos"); }
 
     public int getSeekBarProgress(){
         return preferences.getInt(Consts.SEEKBARPROGRESS, 0);
     }
 
-    public boolean getSwicthIncrease(){ return preferences.getBoolean(Consts.SWICTHINCREASE, false); }
+    public boolean getSwicthIncrease() { return preferences.getBoolean(Consts.SWICTHINCREASE, false); }
 
-    public boolean getFirstRun(){ return preferences.getBoolean(Consts.FIRSTRUN, true); }
+    public boolean getFirstRun() { return preferences.getBoolean(Consts.FIRSTRUN, true); }
 
-    public String getMacadress() { return preferences.getString(Consts.MACADRESS, "Nenhum Dispositivo Conectado"); }
+    public boolean getOnAlarm() { return preferences.getBoolean(Consts.ONALARM, false); }
 
     public boolean getIntroScreens(){
         return preferences.getBoolean(Consts.INTROSCREENS, false);
     }
+
+    public String getMacAddress() { return preferences.getString(Consts.MACADDRESS, "Nenhum Dispositivo Conectado"); }
+
+    public String getNameDevice() { return preferences.getString(Consts.NAME_BT, "Nenhum Dispositivo Conectado"); }
 }

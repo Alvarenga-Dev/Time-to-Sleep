@@ -101,6 +101,9 @@
     <string name="btn_title_send">Enviar</string>
     <string name="alertdialog_btn_canceled_help">Cancelar</string>
 
+    <!-- Alarm Stop -->
+    <string name="title_alarm_stop">Alarme</string>
+
     <!-- Descrição de imagens -->
     <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
 

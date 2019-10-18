@@ -95,6 +95,7 @@ public class AlarmFragment extends Fragment {
 
                 if (success) {
                     Alarm alarmReturn = controller.readLastItem();
+                    preferences.saveOnAlarm(true);
                     adapter.addAlarm(alarmReturn);
                     Snackbar.make(view, "Alarme criado!", Snackbar.LENGTH_SHORT).show();
                 } else {
