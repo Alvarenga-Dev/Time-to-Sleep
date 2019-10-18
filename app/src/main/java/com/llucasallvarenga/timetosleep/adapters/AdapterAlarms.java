@@ -72,7 +72,7 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
 
     private void updateAlarm(Alarm alarm, Alarm alarmEdit){
         alarms.set( alarms.indexOf( alarm ) , alarmEdit );
-        notifyItemChanged( alarms.indexOf(alarmEdit) ); //Joga os novos dados em tempo real...
+        notifyItemChanged( alarms.indexOf(alarmEdit) ); //Joga os novos dados em tempo real
     }
 
     public void deleteAlarm(Alarm alarm){
