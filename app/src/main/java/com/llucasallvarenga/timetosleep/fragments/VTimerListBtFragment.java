@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.R;
+import com.llucasallvarenga.timetosleep.activites.VTimerActivity;
 import com.llucasallvarenga.timetosleep.bluetooth.AdapterDeviceListBt;
 import com.llucasallvarenga.timetosleep.bluetooth.Device;
 import com.llucasallvarenga.timetosleep.utils.Consts;
@@ -54,9 +55,9 @@ public class VTimerListBtFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vtimer_list_bt, container, false);
 
-        if (savedInstanceState == null){
-            Intent intent = new Intent();
-            startActivityForResult( intent , Consts.REQUEST_CONNECTION_BT);
+        if ( savedInstanceState == null ){
+            Activity activity = new Activity();
+            activity.setResult(Consts.REQUEST_CONNECTION_BT);
         }
 
         btnBackSettings = view.findViewById(R.id.btnBackSettingsId);
@@ -76,6 +77,8 @@ public class VTimerListBtFragment extends Fragment {
         listBtRcy.setHasFixedSize(true);
         listBtRcy.setLayoutManager(new LinearLayoutManager( getActivity() ));
 
+        setDevicesTest();
+
         AdapterDeviceListBt adapterDeviceListBt = new AdapterDeviceListBt(devices);
         adapterDeviceListBt.setOnClickListener(position -> {
 
@@ -86,8 +89,10 @@ public class VTimerListBtFragment extends Fragment {
             informationBt.putExtra(Consts.NAME_BT, nameBt);
             informationBt.putExtra(Consts.MAC_ADDRESS_BT, macAddress);
 
+            Toast.makeText(getActivity(), macAddress, Toast.LENGTH_SHORT).show();
 
-
+            Activity activity = new Activity();
+            activity.setResult( RESULT_OK, informationBt );
         });
 
         listBtRcy.setAdapter(adapterDeviceListBt);
@@ -113,10 +118,12 @@ public class VTimerListBtFragment extends Fragment {
 
         switch (requestCode) {
             case Consts.REQUEST_ENABLE_BT:
-                if (resultCode == RESULT_OK)
+                if (resultCode == RESULT_OK) {
                     Toast.makeText(getActivity(), "O bt foi ativado", Toast.LENGTH_SHORT).show();
-                else
+                    setDevicesTest();
+                }else {
                     Toast.makeText(getActivity(), "O bt n foi ativado", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             case Consts.REQUEST_CONNECTION_BT:
