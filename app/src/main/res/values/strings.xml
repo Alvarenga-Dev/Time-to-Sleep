@@ -103,11 +103,14 @@
 
     <!-- Alarm Stop -->
     <string name="title_alarm_stop">Alarme</string>
-
-    <!-- Descrição de imagens -->
-    <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
+    <string name="alarm_stop">Alarme Parar</string>
 
     <!-- Activity da licença -->
     <string name="toolbar_title_licenca">https://time-to-sleep-dispositivo11.firebaseapp.com/licenca_app.html</string>
+
+    <!-- Descrição de imagens -->
+    <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
+    <string name="descrption_splash_logo_animation">logo animation</string>
+    <string name="description_ic_bt">ic bt</string>
 
 </resources>

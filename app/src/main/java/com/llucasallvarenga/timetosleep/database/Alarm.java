@@ -1,9 +1,5 @@
 package com.llucasallvarenga.timetosleep.database;
 
-import android.content.Context;
-
-import com.llucasallvarenga.timetosleep.utils.Preferences;
-
 import java.io.Serializable;
 
 public class Alarm implements Serializable {

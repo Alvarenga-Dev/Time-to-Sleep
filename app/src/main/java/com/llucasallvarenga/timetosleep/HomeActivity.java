@@ -1,6 +1,5 @@
 package com.llucasallvarenga.timetosleep;
 
-import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.FragmentManager;
@@ -11,7 +10,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.llucasallvarenga.timetosleep.activites.HelpActivity;
 import com.llucasallvarenga.timetosleep.activites.SettingsActivity;
@@ -21,7 +19,6 @@ import com.llucasallvarenga.timetosleep.adapters.ViewPagerAdapter;
 import com.llucasallvarenga.timetosleep.fragments.AlarmFragment;
 import com.llucasallvarenga.timetosleep.fragments.ChronometerFragment;
 import com.llucasallvarenga.timetosleep.fragments.ClockFragment;
-import com.llucasallvarenga.timetosleep.utils.MyServices;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class HomeActivity extends AppCompatActivity{
@@ -36,15 +33,6 @@ public class HomeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        Preferences preferences = new Preferences(HomeActivity.this);
-
-        if (savedInstanceState == null){
-            if (preferences.getConnection()) {
-                Intent intent = new Intent(HomeActivity.this, MyServices.class);
-                startService(intent);
-            }
-        }
 
         preferences = new Preferences(HomeActivity.this);
 
@@ -83,34 +71,29 @@ public class HomeActivity extends AppCompatActivity{
     private void setBottomNavigationView(){
 
         bottomNavigationView = findViewById(R.id.bvHomeId);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int id = item.getItemId();
 
-                int id = item.getItemId();
+            switch (id) {
+                case R.id.bnvItemMenuId:
+                    drawerLayout.openDrawer(GravityCompat.START);
+                    return true;
 
-                switch (id) {
-                    case R.id.bnvItemMenuId:
-                        drawerLayout.openDrawer(GravityCompat.START);
-                        return true;
+                case R.id.bnvItemAlarmeId:
+                    viewPager.setCurrentItem(0);
+                    return true;
 
-                    case R.id.bnvItemAlarmeId:
-                        viewPager.setCurrentItem(0);
-                        return true;
+                case R.id.bnvItemRelogioId:
+                    viewPager.setCurrentItem(1);
+                    return true;
 
-                    case R.id.bnvItemRelogioId:
-                        viewPager.setCurrentItem(1);
-                        return true;
+                case R.id.bnvItemCronometroId:
+                    viewPager.setCurrentItem(2);
+                    return true;
 
-                    case R.id.bnvItemCronometroId:
-                        viewPager.setCurrentItem(2);
-                        return true;
-
-                    default:
-                        return false;
-                }
-
+                default:
+                    return false;
             }
 
         });
@@ -122,31 +105,28 @@ public class HomeActivity extends AppCompatActivity{
         drawerLayout = findViewById(R.id.dlHomeId);
         navigationView = findViewById(R.id.navigationDrawerId);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        navigationView.setNavigationItemSelectedListener(item -> {
 
-                int id = item.getItemId();
+            int id = item.getItemId();
 
-                switch (id){
+            switch (id){
 
-                    case R.id.drawerSettingItemId:
-                        setClass(SettingsActivity.class);
-                        return true;
-                    case R.id.drawerVtimerItemId:
-                        setClass(VTimerActivity.class);
-                        return true;
-                    case R.id.drawerHelpItemId:
-                        setClass(HelpActivity.class);
-                        return true;
-                    case R.id.drawerSupportItemId:
-                        setClass(SupportActivity.class);
-                        return true;
-                    default:
-                        return false;
-                }
-
+                case R.id.drawerSettingItemId:
+                    setClass(SettingsActivity.class);
+                    return true;
+                case R.id.drawerVtimerItemId:
+                    setClass(VTimerActivity.class);
+                    return true;
+                case R.id.drawerHelpItemId:
+                    setClass(HelpActivity.class);
+                    return true;
+                case R.id.drawerSupportItemId:
+                    setClass(SupportActivity.class);
+                    return true;
+                default:
+                    return false;
             }
+
         });
 
     }

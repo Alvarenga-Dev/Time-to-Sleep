@@ -6,8 +6,9 @@
     <dimen name="padding_default">8dp</dimen>
 
     <!-- Tamanho de fontes (Celulares) -->
-    <dimen name="size_font_maior_smartphone">16sp</dimen>
-    <dimen name="size_font_normal_smartphone">14sp</dimen>
+    <dimen name="font_size_title_splash">36sp</dimen>
+    <dimen name="font_size_big_smartphone">16sp</dimen>
+    <dimen name="font_size_normal_smartphone">14sp</dimen>
     <dimen name="size_font_small_smartphone">12sp</dimen>
     <dimen name="size_v_timer_status">24sp</dimen>
     <dimen name="size_v_timer_battery">36sp</dimen>

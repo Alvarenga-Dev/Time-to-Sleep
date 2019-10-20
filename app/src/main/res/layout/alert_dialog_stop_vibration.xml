@@ -35,7 +35,7 @@
                 android:text="@string/title_vibrar_config"
                 android:textAlignment="textStart"
                 android:textColor="@color/secondaryColor"
-                android:textSize="@dimen/size_font_maior_smartphone"
+                android:textSize="@dimen/font_size_big_smartphone"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

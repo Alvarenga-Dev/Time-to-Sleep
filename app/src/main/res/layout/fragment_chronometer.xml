@@ -79,7 +79,7 @@
             android:layout_marginBottom="32dp"
             android:text="@string/txt_description_crono"
             android:textAlignment="center"
-            android:textSize="@dimen/size_font_normal_smartphone"
+            android:textSize="@dimen/font_size_normal_smartphone"
             android:textColor="@color/primaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

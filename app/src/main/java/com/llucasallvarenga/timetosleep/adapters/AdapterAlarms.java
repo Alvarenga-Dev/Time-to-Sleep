@@ -60,15 +60,12 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
         controller = new DatabaseAlarmController(context);
         Switch onAlarm = holder.setAlarm;
         boolean check = true;
-        String onAlarmText;
         String hourFormat = MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMinuteDay());
 
         if ( alarms.get(position).getOnAlarm() == 1 ){
             check = true;
-            onAlarmText = "Ligado";
         }else if (alarms.get(position).getOnAlarm() == 0){
             check = false;
-            onAlarmText = "Desligado";
         }
 
         holder.hourAlarm.setText(hourFormat);
@@ -95,13 +92,11 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
                 startAlarm(c);
                 alarm.setOnAlarm(1);
                 controller.insert(alarm);
-                onAlarm.setText("Ligado");
                 Snackbar.make(buttonView, "Alarme ativado!", Snackbar.LENGTH_LONG).show();
             }else{
 
                 alarm.setOnAlarm(0);
                 controller.insert(alarm);
-                onAlarm.setText("Desligado");
                 cancelAlarm();
                 Snackbar.make(buttonView, "Alarme desligado!", Snackbar.LENGTH_LONG).show();
             }
@@ -152,7 +147,7 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
                     c.set(Calendar.SECOND, 0);
 
                     controller = new DatabaseAlarmController(context);
-                    Alarm alarmEdit = new Alarm(id, hourPicker, minutePicker);
+                    Alarm alarmEdit = new Alarm(id, hourPicker, minutePicker,1);
                     boolean success = controller.insert(alarmEdit);
 
                     if (success) {

@@ -14,7 +14,7 @@
         android:layout_marginEnd="16dp"
         android:text="Instituição"
         android:textColor="@color/primaryTextColor"
-        android:textSize="@dimen/size_font_normal_smartphone"
+        android:textSize="@dimen/font_size_normal_smartphone"
         app:layout_constraintBottom_toBottomOf="@+id/ivInformationsId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivInformationsId"

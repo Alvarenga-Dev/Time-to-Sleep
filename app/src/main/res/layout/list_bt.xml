@@ -15,7 +15,7 @@
         android:text="@string/value_init_list_bt"
         android:textAlignment="textStart"
         android:textColor="@color/primaryTextColor"
-        android:textSize="@dimen/size_font_normal_smartphone"
+        android:textSize="@dimen/font_size_normal_smartphone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/deviceTvId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/deviceTvId"
+        android:contentDescription="@string/description_ic_bt"
         app:srcCompat="@drawable/ic_vtimer_bluetooth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

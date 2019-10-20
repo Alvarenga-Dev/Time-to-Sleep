@@ -31,4 +31,7 @@ public class Consts {
     public static final String NAME_BT = "tts.name.bt";
     public static final String CONNECTION_BT = "tts.connection.bt";
     public static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+
+    //for MyServices
+    public static final String ROUTER = "tts.string.router";
 }

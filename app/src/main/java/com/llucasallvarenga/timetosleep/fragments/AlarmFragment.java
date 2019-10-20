@@ -1,7 +1,10 @@
 package com.llucasallvarenga.timetosleep.fragments;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,9 +19,11 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
+import com.llucasallvarenga.timetosleep.activites.VTimerActivity;
 import com.llucasallvarenga.timetosleep.adapters.AdapterAlarms;
 import com.llucasallvarenga.timetosleep.database.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
+import com.llucasallvarenga.timetosleep.utils.MyReceiver;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 import java.util.ArrayList;
@@ -48,7 +53,17 @@ public class AlarmFragment extends Fragment {
         controller = new DatabaseAlarmController(Objects.requireNonNull(getActivity()).getBaseContext());
         preferences = new Preferences( getActivity() );
 
-        btnAddAlarm.setOnClickListener(v -> setTimeFromTimePicker( getActivity(), v ));
+        btnAddAlarm.setOnClickListener(v -> {
+            if (preferences.getConnection())
+                setTimeFromTimePicker(getActivity(), v);
+            else
+                Snackbar.make(v, "Você precisa conectar com o HC-05", Snackbar.LENGTH_LONG)
+                        .setAction("Conectar", vSnackbar ->{
+                            Intent intent = new Intent(getActivity(), VTimerActivity.class);
+                            startActivity(intent);
+                        })
+                        .show();
+        });
 
         onResume();
 
@@ -86,6 +101,11 @@ public class AlarmFragment extends Fragment {
 
                 (timePicker, hourPicker, minutePicker) -> {
 
+                 Calendar c = Calendar.getInstance();
+                 c.set(Calendar.HOUR_OF_DAY, hourPicker);
+                 c.set(Calendar.MINUTE, minutePicker);
+                 c.set(Calendar.SECOND, 0);
+
                 Alarm alarm = new Alarm();
                 alarm.setHourDay(hourPicker);
                 alarm.setMinuteDay(minutePicker);
@@ -96,7 +116,7 @@ public class AlarmFragment extends Fragment {
 
                 if (success) {
                     Alarm alarmReturn = controller.readLastItem();
-                    //preferences.saveOnAlarm(true);
+                    startAlarm(c);
                     adapter.addAlarm(alarmReturn);
                     Snackbar.make(view, "Alarme criado!", Snackbar.LENGTH_SHORT).show();
                 } else {
@@ -110,6 +130,17 @@ public class AlarmFragment extends Fragment {
         );
 
         timePickerDialog.show();
+    }
+
+    private void startAlarm(Calendar calendar) {
+        AlarmManager alarmManager = (AlarmManager) Objects.requireNonNull(getActivity()).getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(getActivity(), MyReceiver.class );
+        PendingIntent pendingIntent = PendingIntent.getBroadcast( getActivity() , 1, intent, 0);
+
+        if (calendar.before(Calendar.getInstance()))
+            calendar.add(Calendar.DATE, 1);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
 
 }

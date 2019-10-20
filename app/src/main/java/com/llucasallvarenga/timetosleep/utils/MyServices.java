@@ -1,5 +1,6 @@
 package com.llucasallvarenga.timetosleep.utils;
 
+import android.app.Activity;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -40,6 +41,36 @@ public class MyServices extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Bundle bundle = intent.getExtras();
+        String router;
+
+        if (bundle != null) {
+
+            router = bundle.getString(Consts.ROUTER);
+                if ("setAlarm".equals(router) ) {
+                    try{
+                        if (bluetoothSocket.isConnected()){
+                            connectedThread.send("1");
+                        }
+                    }catch (NullPointerException e){
+                        connection();
+                        connectedThread.send("1");
+                    }
+                }
+                    
+        }else
+            connection();
+
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    public void connection(){
+
         if (preferences.getNameDevice().equals("HC-05")) {
 
             bluetoothDevice = bluetoothAdapter.getRemoteDevice(preferences.getMacAddress());
@@ -55,18 +86,12 @@ public class MyServices extends Service {
                 Toast.makeText(getApplicationContext(), "Você foi conectado com " + preferences.getNameDevice(), Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 preferences.saveConnection(false);
-                Toast.makeText(getApplicationContext(), "Você não foi conectado com " + preferences.getNameDevice(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Você não foi conectado com V-Timer", Toast.LENGTH_SHORT).show();
                 Log.i("AAAAA", e.getMessage());
             }
 
         }
 
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
 }
