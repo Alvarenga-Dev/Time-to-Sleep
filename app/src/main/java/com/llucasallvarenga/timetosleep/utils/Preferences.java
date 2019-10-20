@@ -19,35 +19,35 @@ public class Preferences {
 
     //Métodos de salvamento de dados do sharedPreferences
     public void saveAlertDialogStopVibration(String value){
-        editor.putString(Consts.ALERTDIALOGSTOPVIBRATION,value);
+        editor.putString(Consts.ALERTDIALOG_STOP_VIBRATION,value);
         editor.commit();
     }
     public void saveAlertDialogSleep(String value){
-        editor.putString(Consts.ALERTDIALOGSLEEP,value);
+        editor.putString(Consts.ALERTDIALOG_SLEEP,value);
         editor.commit();
     }
     public void saveSeekBarProgress(int progress){
-        editor.putInt(Consts.SEEKBARPROGRESS,progress);
+        editor.putInt(Consts.SEEKBAR_PROGRESS,progress);
         editor.commit();
     }
 
     public void saveSwicthIncrease(boolean increase){
-        editor.putBoolean(Consts.SWICTHINCREASE,increase);
+        editor.putBoolean(Consts.SWICTH_INCREASE,increase);
         editor.commit();
     }
 
     public void saveFirstRun(boolean run){
-        editor.putBoolean(Consts.FIRSTRUN,run);
+        editor.putBoolean(Consts.FIRST_RUN,run);
         editor.commit();
     }
 
-    public void saveOnAlarm(boolean onAlarm) {
-        editor.putBoolean(Consts.ONALARM, onAlarm );
+    public void saveConnection(boolean connection) {
+        editor.putBoolean(Consts.CONNECTION_BT, connection );
         editor.commit();
     }
 
     public void saveMacAdressBt(String macAdress){
-        editor.putString(Consts.MACADDRESS, macAdress);
+        editor.putString(Consts.MAC_ADDRESS_BT, macAdress);
         editor.commit();
     }
 
@@ -57,30 +57,30 @@ public class Preferences {
     }
 
     public void saveIntroScreens(boolean passedOn){
-        editor.putBoolean(Consts.INTROSCREENS, passedOn);
+        editor.putBoolean(Consts.INTRO_SCREENS, passedOn);
         editor.commit();
     }
 
     //Métodos de recuperação de dados do sharedPreferences
-    public String getAlertDialogStopVibration() { return preferences.getString(Consts.ALERTDIALOGSTOPVIBRATION,"5 minutos"); }
+    public String getAlertDialogStopVibration() { return preferences.getString(Consts.ALERTDIALOG_STOP_VIBRATION,"5 minutos"); }
 
-    public String getAlertDialogSleep() { return preferences.getString(Consts.ALERTDIALOGSLEEP,"10 minutos"); }
+    public String getAlertDialogSleep() { return preferences.getString(Consts.ALERTDIALOG_SLEEP,"10 minutos"); }
 
     public int getSeekBarProgress(){
-        return preferences.getInt(Consts.SEEKBARPROGRESS, 0);
+        return preferences.getInt(Consts.SEEKBAR_PROGRESS, 0);
     }
 
-    public boolean getSwicthIncrease() { return preferences.getBoolean(Consts.SWICTHINCREASE, false); }
+    public boolean getSwicthIncrease() { return preferences.getBoolean(Consts.SWICTH_INCREASE, false); }
 
-    public boolean getFirstRun() { return preferences.getBoolean(Consts.FIRSTRUN, true); }
+    public boolean getFirstRun() { return preferences.getBoolean(Consts.FIRST_RUN, true); }
 
-    public boolean getOnAlarm() { return preferences.getBoolean(Consts.ONALARM, false); }
+    public Boolean getConnection() { return preferences.getBoolean(Consts.CONNECTION_BT, false); }
 
     public boolean getIntroScreens(){
-        return preferences.getBoolean(Consts.INTROSCREENS, false);
+        return preferences.getBoolean(Consts.INTRO_SCREENS, false);
     }
 
-    public String getMacAddress() { return preferences.getString(Consts.MACADDRESS, "Nenhum Dispositivo Conectado"); }
+    public String getMacAddress() { return preferences.getString(Consts.MAC_ADDRESS_BT, null); }
 
-    public String getNameDevice() { return preferences.getString(Consts.NAME_BT, "Nenhum Dispositivo Conectado"); }
+    public String getNameDevice() { return preferences.getString(Consts.NAME_BT, null); }
 }

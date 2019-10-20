@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep;
+package com.llucasallvarenga.timetosleep.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

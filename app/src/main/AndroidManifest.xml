@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.AlarmStopActivity"></activity>
+        <service android:name=".utils.MyServices"/>
+        <activity android:name=".activites.AlarmStopActivity"/>
         <activity android:name=".activites.VTimerActivity" />
         <activity android:name=".activites.SupportActivity" />
         <activity android:name=".activites.HelpActivity" />
@@ -27,6 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".MyReceiver" />
+        <receiver android:name=".utils.MyReceiver" />
     </application>
 </manifest>

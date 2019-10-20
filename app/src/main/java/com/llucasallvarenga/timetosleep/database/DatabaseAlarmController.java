@@ -25,6 +25,7 @@ public class DatabaseAlarmController {
 
         values.put( Consts.HOUR_OF_DAY, alarm.getHourDay() );
         values.put( Consts.MINUTE_OF_DAY, alarm.getMinuteDay() );
+        values.put( Consts.ALARM_ON, alarm.getOnAlarm() );
 
         if ( alarm.getId() > 0 )
             return sql.update(Consts.TABLE_NAME, values, "id = ?", new String[]{ alarm.getId() + "" }) > 0;
@@ -40,19 +41,22 @@ public class DatabaseAlarmController {
                 "SELECT " +
                         Consts.ID + "," +
                         Consts.HOUR_OF_DAY  +  "," +
-                        Consts.MINUTE_OF_DAY + " FROM "+
+                        Consts.MINUTE_OF_DAY  +  "," +
+                        Consts.ALARM_ON + " FROM "+
                         Consts.TABLE_NAME ,
                 null);
 
         int indexColumnId = cursor.getColumnIndex(Consts.ID);
         int indexColumnHourOfDay = cursor.getColumnIndex(Consts.HOUR_OF_DAY);
         int indexColumnMinuteOfDay = cursor.getColumnIndex(Consts.MINUTE_OF_DAY);
+        int indexColumnAlarmOn = cursor.getColumnIndex(Consts.ALARM_ON);
 
         while( cursor.moveToNext() ) {
             Alarm alarm = new Alarm();
             alarm.setId(cursor.getInt(indexColumnId));
             alarm.setHourDay(cursor.getInt(indexColumnHourOfDay));
             alarm.setMinuteDay(cursor.getInt(indexColumnMinuteOfDay));
+            alarm.setOnAlarm(cursor.getInt(indexColumnAlarmOn));
             alarms.add(alarm);
         }
 
@@ -69,13 +73,15 @@ public class DatabaseAlarmController {
         int indexColumnId = cursor.getColumnIndex(Consts.ID);
         int indexColumnHourOfDay = cursor.getColumnIndex(Consts.HOUR_OF_DAY);
         int indexColumnMinuteOfDay = cursor.getColumnIndex(Consts.MINUTE_OF_DAY);
+        int indexColumnAlarmOn = cursor.getColumnIndex(Consts.ALARM_ON);
 
         if ( cursor.moveToFirst() ) {
             int id = cursor.getInt(indexColumnId);
             int hour = cursor.getInt(indexColumnHourOfDay);
             int minute = cursor.getInt(indexColumnMinuteOfDay);
+            int alarmOn = cursor.getInt(indexColumnAlarmOn);
             cursor.close();
-            return new Alarm(id, hour, minute);
+            return new Alarm(id, hour, minute, alarmOn);
         }
 
         return null;

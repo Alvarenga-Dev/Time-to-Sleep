@@ -89,13 +89,14 @@ public class AlarmFragment extends Fragment {
                 Alarm alarm = new Alarm();
                 alarm.setHourDay(hourPicker);
                 alarm.setMinuteDay(minutePicker);
+                alarm.setOnAlarm(1);
 
                 controller = new DatabaseAlarmController( Objects.requireNonNull(getActivity()).getBaseContext() );
                 boolean success = controller.insert(alarm);
 
                 if (success) {
                     Alarm alarmReturn = controller.readLastItem();
-                    preferences.saveOnAlarm(true);
+                    //preferences.saveOnAlarm(true);
                     adapter.addAlarm(alarmReturn);
                     Snackbar.make(view, "Alarme criado!", Snackbar.LENGTH_SHORT).show();
                 } else {

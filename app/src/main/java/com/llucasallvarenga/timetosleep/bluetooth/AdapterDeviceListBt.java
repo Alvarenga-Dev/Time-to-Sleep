@@ -40,6 +40,11 @@ public class AdapterDeviceListBt extends RecyclerView.Adapter<AdapterDeviceListB
 
     }
 
+    public void addDevice(Device device){
+        devices.add(device);
+        notifyItemInserted( getItemCount() );
+    }
+
     @Override
     public int getItemCount() {
         return devices.size();

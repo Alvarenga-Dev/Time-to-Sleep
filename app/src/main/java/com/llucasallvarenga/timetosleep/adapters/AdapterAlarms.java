@@ -20,13 +20,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.llucasallvarenga.timetosleep.MyReceiver;
+import com.llucasallvarenga.timetosleep.utils.MyReceiver;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.database.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 import com.llucasallvarenga.timetosleep.dialogs.AlertDialogAlarmDelete;
-import com.llucasallvarenga.timetosleep.utils.Consts;
-import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -37,7 +35,6 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
     private ArrayList<Alarm> alarms;
     private Context context;
     private DatabaseAlarmController controller;
-    private Preferences preferences;
 
     public AdapterAlarms(ArrayList<Alarm> alarms, Context context) {
         this.alarms = alarms;
@@ -60,12 +57,21 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull AdapterAlarms.ViewHolder holder, final int position) {
 
+        controller = new DatabaseAlarmController(context);
         Switch onAlarm = holder.setAlarm;
+        boolean check = true;
+        String onAlarmText;
         String hourFormat = MessageFormat.format("{0} : {1}", alarms.get(position).getHourDay(), alarms.get(position).getMinuteDay());
-        preferences = new Preferences( context.getApplicationContext() );
+
+        if ( alarms.get(position).getOnAlarm() == 1 ){
+            check = true;
+            onAlarmText = "Ligado";
+        }else if (alarms.get(position).getOnAlarm() == 0){
+            check = false;
+            onAlarmText = "Desligado";
+        }
 
         holder.hourAlarm.setText(hourFormat);
-
         holder.hourAlarm.setOnClickListener(view ->
                 setTimePicker(
                     context,
@@ -75,22 +81,29 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
                 )
         );
 
-        onAlarm.setChecked( alarms.get(position).isOnAlarm(context) );
+        onAlarm.setChecked(check);
         onAlarm.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked){
 
+            Alarm alarm = new Alarm();
+
+            if (isChecked){
                 Calendar c = Calendar.getInstance();
                 c.set(Calendar.HOUR_OF_DAY, alarms.get(position).getHourDay() );
                 c.set(Calendar.MINUTE, alarms.get(position).getMinuteDay());
                 c.set(Calendar.SECOND, 0);
 
                 startAlarm(c);
-                preferences.saveOnAlarm(true);
+                alarm.setOnAlarm(1);
+                controller.insert(alarm);
+                onAlarm.setText("Ligado");
                 Snackbar.make(buttonView, "Alarme ativado!", Snackbar.LENGTH_LONG).show();
             }else{
-                preferences.saveOnAlarm(false);
+
+                alarm.setOnAlarm(0);
+                controller.insert(alarm);
+                onAlarm.setText("Desligado");
                 cancelAlarm();
-                Snackbar.make(buttonView, "Alarme ativado!", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(buttonView, "Alarme desligado!", Snackbar.LENGTH_LONG).show();
             }
         });
 
@@ -139,12 +152,10 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
                     c.set(Calendar.SECOND, 0);
 
                     controller = new DatabaseAlarmController(context);
-                    preferences = new Preferences(context.getApplicationContext());
                     Alarm alarmEdit = new Alarm(id, hourPicker, minutePicker);
                     boolean success = controller.insert(alarmEdit);
 
                     if (success) {
-                        preferences.saveOnAlarm(true);
                         updateAlarm(alarm, alarmEdit);
                         startAlarm(c);
                         Snackbar.make(view, "Alarme Atualizado!", Snackbar.LENGTH_LONG).show();
@@ -189,6 +200,9 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, MyReceiver.class );
         PendingIntent pendingIntent = PendingIntent.getBroadcast( context , 1, intent, 0);
+
+        if (calendar.before(Calendar.getInstance()))
+            calendar.add(Calendar.DATE, 1);
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }

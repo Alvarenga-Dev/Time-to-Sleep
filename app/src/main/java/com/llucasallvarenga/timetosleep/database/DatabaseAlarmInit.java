@@ -20,7 +20,7 @@ public class DatabaseAlarmInit extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + Consts.TABLE_NAME +"(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                Consts.HOUR_OF_DAY + " INTEGER, "+ Consts.MINUTE_OF_DAY +" INTEGER )");
+                Consts.HOUR_OF_DAY + " INTEGER, "+ Consts.MINUTE_OF_DAY +" INTEGER, " + Consts.ALARM_ON + " INTEGER )");
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.fragments.VTimerListBtFragment;
 import com.llucasallvarenga.timetosleep.fragments.VTimerStatusFragment;
+import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class VTimerActivity extends AppCompatActivity {
 
@@ -17,10 +18,16 @@ public class VTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vtimer);
 
+        Preferences preferences = new Preferences(VTimerActivity.this);
+
         if (savedInstanceState == null) {
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-            transaction.add(R.id.containerVTimerId, new VTimerListBtFragment()).commit();
+            if (preferences.getConnection())
+                transaction.add(R.id.containerVTimerId, new VTimerStatusFragment()).commit();
+            else
+                transaction.add(R.id.containerVTimerId, new VTimerListBtFragment()).commit();
+
         }
     }
 }

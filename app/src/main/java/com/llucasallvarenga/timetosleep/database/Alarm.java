@@ -11,13 +11,25 @@ public class Alarm implements Serializable {
     private int id;
     private int hourDay;
     private int minuteDay;
+    private int onAlarm;
 
     public Alarm(){}
+
+    public Alarm(int onAlarm){
+        this.onAlarm = onAlarm;
+    }
 
     public Alarm(int id, int hourDay, int minuteDay) {
         this.id = id;
         this.hourDay = hourDay;
         this.minuteDay = minuteDay;
+    }
+
+    public Alarm(int id, int hourDay, int minuteDay, int onAlarm) {
+        this.id = id;
+        this.hourDay = hourDay;
+        this.minuteDay = minuteDay;
+        this.onAlarm = onAlarm;
     }
 
     public int getId() {
@@ -44,9 +56,11 @@ public class Alarm implements Serializable {
         this.minuteDay = minuteDay;
     }
 
-    public boolean isOnAlarm(Context context) {
-        Preferences preferences = new Preferences(context);
-        return preferences.getOnAlarm();
+    public int getOnAlarm() {
+        return onAlarm;
     }
 
+    public void setOnAlarm(int onAlarm) {
+        this.onAlarm = onAlarm;
+    }
 }
