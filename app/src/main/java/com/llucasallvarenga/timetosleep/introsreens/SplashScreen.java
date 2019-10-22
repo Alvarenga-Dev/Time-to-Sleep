@@ -8,6 +8,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;
@@ -28,23 +29,30 @@ public class SplashScreen extends AppCompatActivity {
         AnimationDrawable animationDrawable = (AnimationDrawable) logo.getBackground();
         animationDrawable.start();
 
+
+
         Handler handler = new Handler();
         handler.postDelayed(() -> {
 
-            if (preferences.getConnection() && BluetoothAdapter.getDefaultAdapter().isEnabled()) {
-                Intent intent = new Intent(SplashScreen.this, MyServices.class);
-                startService(intent);
+            if ( !preferences.getFirstOpenApp() ) {
+
+                if (preferences.getConnection() && BluetoothAdapter.getDefaultAdapter().isEnabled()) {
+                    Intent intent = new Intent(SplashScreen.this, MyServices.class);
+                    startService(intent);
+                }
+
+                router( HomeActivity.class );
+                finish();
+            }else{
+                router(TutorialsScreens.class);
             }
 
-            router();
-
-        }, 4500);
+        }, 1100);
 
     }
 
-    private void router(){
-        Intent intent = new Intent(SplashScreen.this, HomeActivity.class);
+    private void router(Class aClass){
+        Intent intent = new Intent(SplashScreen.this, aClass);
         startActivity(intent);
-        finish();
     }
 }

@@ -19,6 +19,7 @@ import com.llucasallvarenga.timetosleep.database.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AlertDialogAlarmDelete extends AppCompatDialogFragment {
 

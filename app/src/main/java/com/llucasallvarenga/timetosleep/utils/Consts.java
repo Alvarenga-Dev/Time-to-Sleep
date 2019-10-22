@@ -18,6 +18,7 @@ public class Consts {
     public static final String SWICTH_INCREASE = "tts.swicth.increase";
     public static final String INTRO_SCREENS = "tts.intro.screens";
     public static final String FIRST_RUN = "tts.first.run";
+    public static final String FIRST_OPEN = "tts.first.open";
 
     // for notification
     public static final String CHANNEL1ID = "channel1ID";

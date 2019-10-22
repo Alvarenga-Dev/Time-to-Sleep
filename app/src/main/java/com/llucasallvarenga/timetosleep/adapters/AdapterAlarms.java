@@ -20,11 +20,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.llucasallvarenga.timetosleep.fragments.AlarmFragment;
 import com.llucasallvarenga.timetosleep.utils.MyReceiver;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.database.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 import com.llucasallvarenga.timetosleep.dialogs.AlertDialogAlarmDelete;
+import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -117,11 +119,11 @@ public class AdapterAlarms extends RecyclerView.Adapter<AdapterAlarms.ViewHolder
         notifyItemInserted( getItemCount() );
     }
 
-    public void deleteAlarm( Alarm alarm){
+    public void deleteAlarm(Alarm alarm){
         int position = alarms.indexOf( alarm );
-        alarms.remove(position);
+        alarms.remove( position );
         notifyItemRemoved(position);
-        Log.i("Opa", "Atualiza o bostaaa");
+        notifyItemRangeRemoved(position, getItemCount());
     }
 
     private void updateAlarm(Alarm alarm, Alarm alarmEdit){

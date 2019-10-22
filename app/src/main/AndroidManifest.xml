@@ -5,8 +5,10 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".utils.App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,8 +32,12 @@
         <activity android:name=".activites.SettingsActivity" />
         <activity android:name=".activites.AlarmStopActivity" />
 
-        <receiver android:name=".utils.MyReceiver" />
-        <service android:name=".utils.MyServices" />
+        <activity
+            android:name=".introsreens.TutorialsScreens"
+            android:theme="@style/Theme.Intro"/>
+
+        <receiver android:name=".utils.MyReceiver"/>
+        <service android:enabled="true" android:name=".utils.MyServices" />
     </application>
 
 </manifest>

@@ -41,6 +41,11 @@ public class Preferences {
         editor.commit();
     }
 
+    public void saveOpenFirstApp(boolean open){
+        editor.putBoolean(Consts.FIRST_OPEN, open);
+        editor.commit();
+    }
+
     public void saveConnection(boolean connection) {
         editor.putBoolean(Consts.CONNECTION_BT, connection );
         editor.commit();
@@ -76,9 +81,9 @@ public class Preferences {
 
     public Boolean getConnection() { return preferences.getBoolean(Consts.CONNECTION_BT, false); }
 
-    public boolean getIntroScreens(){
-        return preferences.getBoolean(Consts.INTRO_SCREENS, false);
-    }
+    public boolean getIntroScreens(){ return preferences.getBoolean(Consts.INTRO_SCREENS, false); }
+
+    public boolean getFirstOpenApp(){ return preferences.getBoolean(Consts.FIRST_OPEN, true); }
 
     public String getMacAddress() { return preferences.getString(Consts.MAC_ADDRESS_BT, null); }
 

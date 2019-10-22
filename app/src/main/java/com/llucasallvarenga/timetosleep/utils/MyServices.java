@@ -5,9 +5,12 @@ import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Vibrator;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -47,15 +50,13 @@ public class MyServices extends Service {
         if (bundle != null) {
 
             router = bundle.getString(Consts.ROUTER);
+
                 if ("setAlarm".equals(router) ) {
-                    try{
-                        if (bluetoothSocket.isConnected()){
-                            connectedThread.send("1");
-                        }
-                    }catch (NullPointerException e){
-                        connection();
-                        connectedThread.send("1");
-                    }
+                    Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    vibrator.vibrate(1500);
+                    connectedThread.send("1");
+                    Handler handler = new Handler();
+                    handler.postDelayed(() -> connectedThread.send("2"), 5000);
                 }
                     
         }else

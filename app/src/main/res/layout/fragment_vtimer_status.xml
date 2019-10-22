@@ -111,7 +111,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Ótimo!"
-                        android:textColor="@color/veryNiceStatusColor"
+                        android:textColor="@color/colorVeryNiceStatus"
                         app:layout_constraintBottom_toBottomOf="@+id/textView3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"

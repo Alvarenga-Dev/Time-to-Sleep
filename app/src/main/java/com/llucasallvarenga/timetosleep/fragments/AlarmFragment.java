@@ -57,12 +57,11 @@ public class AlarmFragment extends Fragment {
             if (preferences.getConnection())
                 setTimeFromTimePicker(getActivity(), v);
             else
-                Snackbar.make(v, "Você precisa conectar com o HC-05", Snackbar.LENGTH_LONG)
+               Snackbar.make(v, "Você precisa conectar com o HC-05", Snackbar.LENGTH_LONG)
                         .setAction("Conectar", vSnackbar ->{
                             Intent intent = new Intent(getActivity(), VTimerActivity.class);
                             startActivity(intent);
-                        })
-                        .show();
+                        }).show();
         });
 
         onResume();
@@ -137,8 +136,7 @@ public class AlarmFragment extends Fragment {
         Intent intent = new Intent(getActivity(), MyReceiver.class );
         PendingIntent pendingIntent = PendingIntent.getBroadcast( getActivity() , 1, intent, 0);
 
-        if (calendar.before(Calendar.getInstance()))
-            calendar.add(Calendar.DATE, 1);
+        if (calendar.before(Calendar.getInstance())) calendar.add(Calendar.DATE, 1);
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }

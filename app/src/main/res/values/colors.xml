@@ -17,13 +17,15 @@
     <color name="errorColor">#EC2206</color>
     
     <!-- Cores Status -->
-    <color name="veryNiceStatusColor">#217D30</color>
-    <color name="NiceStatusColor">#89AA1B</color>
-    <color name="badniceStatusColor">#DFC515</color>
-    <color name="badStatusColor">#7D2121</color>
+    <color name="colorVeryNiceStatus">#217D30</color>
+    <color name="colorNiceStatus">#89AA1B</color>
+    <color name="colorBadniceStatus">#DFC515</color>
+    <color name="colorBadStatus">#7D2121</color>
 
     <!-- Slides -->
     <color name="colorSlidePar">#54D0DD</color>
     <color name="colorSlideImpar">#343B42</color>
     <color name="colorBtnSlide">#486B6B6B</color>
+    <color name="colorSlideTitle">#FFFFFF</color>
+    <color name="colorSlideDescription">#f2f2f2</color>
 </resources>

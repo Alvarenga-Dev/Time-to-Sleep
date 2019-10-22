@@ -62,55 +62,52 @@ public class AlertDialogStopVibration extends AppCompatDialogFragment {
         listaSettar();
 
         AdapterStopVibration adapter = new AdapterStopVibration(stopVibratingOptions);
-        adapter.setOnClickListener(new AdapterStopVibration.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                //Dentro do switch mandará instruções para o arduino. Já o texto será settado com a interface;
+        adapter.setOnClickListener(position -> {
+            //Dentro do switch mandará instruções para o arduino. Já o texto será settado com a interface;
 
-                String minutesValue;
+            String minutesValue;
 
-                switch (position){
-                    case 0:
-                        minutesValue = selections[0];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 1:
-                        minutesValue = selections[1];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 2:
-                        minutesValue = selections[2];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 3:
-                        minutesValue = selections[3];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 4:
-                        minutesValue = selections[4];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 5:
-                        minutesValue = selections[5];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 6:
-                        minutesValue = selections[6];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                    case 7:
-                        minutesValue = selections[7];
-                        listener.minutesStopVibration(minutesValue);
-                        alertDialog.dismiss();
-                        break;
-                }
+            switch (position){
+                case 0:
+                    minutesValue = selections[0];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 1:
+                    minutesValue = selections[1];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 2:
+                    minutesValue = selections[2];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 3:
+                    minutesValue = selections[3];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 4:
+                    minutesValue = selections[4];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 5:
+                    minutesValue = selections[5];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 6:
+                    minutesValue = selections[6];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
+                case 7:
+                    minutesValue = selections[7];
+                    listener.minutesStopVibration(minutesValue);
+                    alertDialog.dismiss();
+                    break;
             }
         });
         recyclerView.setAdapter(adapter);

@@ -11,17 +11,12 @@
     <string name="bottom_nav_title_alarmes">Alarmes</string>
 
     <!-- Slide e seus textos-->
-    <string name="slide_title_1">Um despertador feito para você!</string>
-    <string name="slide_description_1">Agradecemos por adquirir o V-Timer! Esperamos que este despertador ajude você ter maior autonomia!</string>
+    <string name="slide_title_1">Olá, seja bem-vindo! \n Obrigado por baixar o nosso aplicativo.</string>
     <string name="slide_title_2">Um aplicativo simples e funcional!</string>
-    <string name="slide_description_2">Através do aplicativo, você poderá definir alarmes, usar o cronômetro e verificar o dia e a hora.</string>
-    <string name="slide_title_3">Agora, devemos conectar o V-Timer!</string>
-    <string name="slide_description_3">Para isso, vamos verificar a lista de dispositivos disponíveis!</string>
-    <string name="slide_title_4_bt_conect">Selecione o <b>V-Timer</b>, para conectar ele com o seu celular!</string>
-    <string name="slide_title_4_bt_desconect">Aperte o botão para ligar o seu bluetooth!</string>
-    <string name="slide_btn_title_4">Ligar bluetooth</string>
-    <string name="slide_error_message_4">Para proseguir, é importante a liberação do uso do bluetooth.</string>
-    <string name="slide_dialog_title_4">Tudo pronto!</string>
+    <string name="slide_description_2">Através do aplicativo, você poderá criar alarmes, cronômetro usar e dia ou hora ver.</string>
+    <string name="slide_title_3">Agora, habilitar o bluetooth e conectar V-Timer importante!</string>
+    <string name="slide_btn_3">Conectar com o V-Timer</string>
+    <string name="slide_error_message_3">Para proseguir, é importante bluetooth liberar.</string>
 
     <!-- Sessão: Fragments -->
 
@@ -57,7 +52,7 @@
     <string name="btn_title_teste_vtimer">Testar conexão</string>
 
     <!-- V-Timer ( Lista Bt ) -->
-    <string name="page_title_vtimer_list_bt">Ache o V-Timer!</string>
+    <string name="page_title_vtimer_list_bt">Selecione o V-Timer!</string>
     <string name="value_init_list_bt">V-Timer</string>
 
     <!-- Sessão: Activity´s -->
@@ -71,9 +66,9 @@
     <string name="value2_soneca_inicial_config">10 minutes</string>
     <string name="subtitle_aumentar_vibracoes_config">Aumentar gradualmente a vibração</string>
     <string name="title_niveis_vibracoes">Níveis de vibração</string>
-    <string name="nivel_1_config">1</string>
-    <string name="nivel_2_config">2</string>
-    <string name="nivel_3_config">3</string>
+    <string name="level_1_config">1</string>
+    <string name="level_2_config">2</string>
+    <string name="level_3_config">3</string>
 
     <!-- Ajuda -->
     <string name="page_title_ajuda">Ajuda</string>
@@ -87,7 +82,7 @@
 
     <!-- Ajuda ~ Dados do app (INFO) -->
     <string name="title_nome_appinfo">Time to Sleep - App</string>
-    <string name="title_versao_appinfo">Versão 1.21.1</string>
+    <string name="title_versao_appinfo">Versão 1.5</string>
     <string name="ic_description_appinfo">Icone informação</string>
     <string name="logo_da_empresa_descricao_appinfo">Logo da empresa</string>
     <string name="copy_appinfo">© 2018 – 2019 Time to Sleep</string>
@@ -112,5 +107,8 @@
     <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
     <string name="descrption_splash_logo_animation">logo animation</string>
     <string name="description_ic_bt">ic bt</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -40,4 +40,19 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="SlideTitleStyle" parent="TextAppearance.AppCompat">
+        <item name="android:padding">@dimen/padding_default</item>
+        <item name="android:textColor">@color/colorSlideTitle</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SlideDescriptionStyle" parent="TextAppearance.AppCompat">
+        <item name="android:padding">@dimen/padding_default</item>
+        <item name="android:textColor">@color/colorSlideDescription</item>
+        <item name="android:textSize">@dimen/font_size_big_smartphone</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>
