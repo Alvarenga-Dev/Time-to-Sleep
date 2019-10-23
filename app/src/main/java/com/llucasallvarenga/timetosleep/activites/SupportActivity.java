@@ -49,12 +49,24 @@ public class SupportActivity extends AppCompatActivity {
 
         String mailValue = inputMail.getEditText().getText().toString();
         String descriptionProblemValue = inputDescriptionProblem.getEditText().getText().toString();
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-        if (mailValue.isEmpty()) {
-            Snackbar snackbar = Snackbar.make(supportLayout, "Campo vazio!", Snackbar.LENGTH_SHORT);
-            snackbar.show();
+        if (mailValue.isEmpty() || descriptionProblemValue.isEmpty()) {
+            setSnackbar("Preencha os campos corretamente!");
+        }else if (!validateEmailFormat(mailValue)){
+            setSnackbar("Email inválido!");
+        }else{
+            setSnackbar("Enviado!");
         }
 
     }
+
+    private boolean validateEmailFormat(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void setSnackbar(String text){
+        Snackbar snackbar = Snackbar.make(supportLayout, text, Snackbar.LENGTH_SHORT);
+        snackbar.show();
+    }
+
 }
