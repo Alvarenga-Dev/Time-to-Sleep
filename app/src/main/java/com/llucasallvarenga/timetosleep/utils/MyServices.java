@@ -1,6 +1,5 @@
 package com.llucasallvarenga.timetosleep.utils;
 
-import android.app.Activity;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -11,7 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
