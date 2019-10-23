@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/deviceTvId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/deviceTvId"
-        android:contentDescription="@string/description_ic_bt"
+        android:contentDescription="@string/ic_description_bt"
         app:srcCompat="@drawable/ic_vtimer_bluetooth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

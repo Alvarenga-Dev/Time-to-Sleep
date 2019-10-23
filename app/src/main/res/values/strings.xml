@@ -73,20 +73,16 @@
     <!-- Ajuda -->
     <string name="page_title_ajuda">Ajuda</string>
     <string name="title_artigos_ajuda">Artigos</string>
-    <string name="ic_description_artigos_ajuda">Icone artigo</string>
     <string name="subtitle_artigos_ajuda">Subtítulos artigo</string>
     <string name="title_app_ajuda">Sobre o app e instituição</string>
-    <string name="ic_description_app_ajuda">Icone - app e instituição</string>
     <string name="txt_subtitle_app_ajuda">Subtítulos - app e instituição</string>
     <string name="title_list_value_init_artigos">Definir, cancelar ou adiar alarmes</string>
 
     <!-- Ajuda ~ Dados do app (INFO) -->
-    <string name="title_nome_appinfo">Time to Sleep - App</string>
-    <string name="title_versao_appinfo">Versão 1.5</string>
-    <string name="ic_description_appinfo">Icone informação</string>
-    <string name="logo_da_empresa_descricao_appinfo">Logo da empresa</string>
-    <string name="copy_appinfo">© 2018 – 2019 Time to Sleep</string>
-    <string name="btn_title_appinfo">Licença</string>
+    <string name="title_name_app">Time to Sleep - App</string>
+    <string name="title_version_app">Versão 1.5</string>
+    <string name="copy_app">© 2018 – 2019 Time to Sleep</string>
+    <string name="btn_title_app">Licença</string>
 
     <!-- Suporte -->
     <string name="page_title_support">Suporte</string>
@@ -100,15 +96,17 @@
     <string name="title_alarm_stop">Alarme</string>
     <string name="alarm_stop">Alarme Parar</string>
 
-    <!-- Activity da licença -->
-    <string name="toolbar_title_licenca">https://time-to-sleep-dispositivo11.firebaseapp.com/licenca_app.html</string>
+    <!-- Activity da licença e política de privacidade -->
+    <string name="toolbar_title_license">https://timetosleepbr.github.io/licenca_app.html</string>
+    <string name="toolbar_title_privacy_app">https://timetosleepbr.github.io/privacy_app.html</string>
 
     <!-- Descrição de imagens -->
     <string name="ic_dialog_iv_description">Ícone de uma lixeira</string>
-    <string name="descrption_splash_logo_animation">logo animation</string>
-    <string name="description_ic_bt">ic bt</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ic_descrption_splash_logo_animation">logo animação</string>
+    <string name="ic_description_bt">Ícone bluetooth</string>
+    <string name="ic_description_app">Icone informação</string>
+    <string name="ic_logo_startup">Logo da empresa</string>
+    <string name="ic_description_app_help">Icone - app e instituição</string>
+    <string name="ic_description_articles_help">Icone artigo</string>
 
 </resources>

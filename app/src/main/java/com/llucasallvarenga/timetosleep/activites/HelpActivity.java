@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.adapters.AdapterArticles;
 import com.llucasallvarenga.timetosleep.adapters.AdapterInformations;
@@ -20,10 +19,8 @@ import java.util.ArrayList;
 
 public class HelpActivity extends AppCompatActivity {
 
-    private ImageView btnReturn;
     private ArrayList<Articles> articles;
     private ArrayList<Informations> informations;
-    private RecyclerView listaRcyArticles, listaRcyAbout;
 
     private String[] titleArticles = {
             "Ajustar hora, data e fuso horário",
@@ -47,9 +44,9 @@ public class HelpActivity extends AppCompatActivity {
 
         articles = new ArrayList<>();
         informations = new ArrayList<>();
-        listaRcyArticles = findViewById(R.id.rcyArticlesId);
-        listaRcyAbout = findViewById(R.id.rcyInformationId);
-        btnReturn = findViewById(R.id.btnBackSettingsId);
+        RecyclerView listaRcyArticles = findViewById(R.id.rcyArticlesId);
+        RecyclerView listaRcyAbout = findViewById(R.id.rcyInformationId);
+        ImageView btnReturn = findViewById(R.id.btnBackSettingsId);
 
         btnReturn.setOnClickListener(v -> finish());
 
@@ -87,10 +84,10 @@ public class HelpActivity extends AppCompatActivity {
 
             switch (position){
                 case 0:
-                    Toast.makeText(HelpActivity.this, "1", Toast.LENGTH_SHORT).show();
+                    router(TermsAndPolicyActivity.class);
                     break;
                 case 1:
-                    Toast.makeText(HelpActivity.this, "2", Toast.LENGTH_SHORT).show();
+                    router(AppDataActivity.class);
                     break;
             }
         });
@@ -113,8 +110,8 @@ public class HelpActivity extends AppCompatActivity {
             informations.add( new Informations( icons[position], aboutTitles[position] ) );
     }
 
-    private void router(){
-        Intent intent = new Intent(HelpActivity.this, HomeActivity.class);
+    private void router(Class aClass){
+        Intent intent = new Intent(HelpActivity.this, aClass);
         startActivity( intent );
     }
 }

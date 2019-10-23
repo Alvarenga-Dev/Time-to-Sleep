@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="@string/ic_description_appinfo"
+        android:contentDescription="@string/ic_description_app"
         android:tint="@color/primaryTextColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

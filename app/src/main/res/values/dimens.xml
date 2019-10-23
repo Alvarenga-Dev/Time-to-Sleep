@@ -50,4 +50,7 @@
     <!-- Alarm -->
     <dimen name="alarm_container_height">120dp</dimen>
 
+    <!-- Toolbar -->
+    <dimen name="toolbar_title_margin_start">16dp</dimen>
+
 </resources>
