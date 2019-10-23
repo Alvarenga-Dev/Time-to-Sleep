@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
@@ -33,10 +32,7 @@ import java.util.Objects;
 public class AlarmFragment extends Fragment {
 
     private DatabaseAlarmController controller;
-    private RecyclerView alarmListRcy;
-    private Button btnAddAlarm;
     private AdapterAlarms adapter;
-    private ArrayList<Alarm> alarms;
     private ArrayList<Alarm> alarmsFilters = new ArrayList<>();
     private Preferences preferences;
 
@@ -48,20 +44,20 @@ public class AlarmFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_alarm, container, false);
 
-        alarmListRcy = view.findViewById(R.id.alarmListRcyId);
-        btnAddAlarm = view.findViewById(R.id.btnAddAlarmId);
+        RecyclerView alarmListRcy = view.findViewById(R.id.alarmListRcyId);
+        Button btnAddAlarm = view.findViewById(R.id.btnAddAlarmId);
         controller = new DatabaseAlarmController(Objects.requireNonNull(getActivity()).getBaseContext());
         preferences = new Preferences( getActivity() );
 
         btnAddAlarm.setOnClickListener(v -> {
-            if (preferences.getConnection())
+           if (preferences.getConnection())
                 setTimeFromTimePicker(getActivity(), v);
-            else
-               Snackbar.make(v, "Você precisa conectar com o HC-05", Snackbar.LENGTH_LONG)
+           else
+                Snackbar.make(v, "Você precisa conectar com o HC-05", Snackbar.LENGTH_LONG)
                         .setAction("Conectar", vSnackbar ->{
-                            Intent intent = new Intent(getActivity(), VTimerActivity.class);
+                           Intent intent = new Intent(getActivity(), VTimerActivity.class);
                             startActivity(intent);
-                        }).show();
+                      }).show();
         });
 
         onResume();
@@ -80,7 +76,7 @@ public class AlarmFragment extends Fragment {
         super.onResume();
 
         if ( preferences.getFirstRun() ){
-            alarms = controller.read();
+            ArrayList<Alarm> alarms = controller.read();
             alarmsFilters.addAll(alarms);
             preferences.saveFirstRun(false);
         }
@@ -138,7 +134,7 @@ public class AlarmFragment extends Fragment {
 
         if (calendar.before(Calendar.getInstance())) calendar.add(Calendar.DATE, 1);
 
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+        Objects.requireNonNull(alarmManager).setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
 
 }

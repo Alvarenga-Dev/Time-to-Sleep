@@ -19,8 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.AppDataActivity"/>
-        <activity android:name=".activites.TermsAndPolicyActivity" />
+        <activity android:name=".activites.AppDataActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activites.TermsAndPolicyActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".introsreens.SplashScreen"
             android:screenOrientation="portrait">
@@ -30,14 +30,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".activites.VTimerActivity" />
-        <activity android:name=".activites.SupportActivity" />
-        <activity android:name=".activites.HelpActivity" />
-        <activity android:name=".activites.SettingsActivity" />
-        <activity android:name=".activites.AlarmStopActivity" />
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activites.VTimerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activites.SupportActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activites.HelpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activites.SettingsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activites.AlarmStopActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".introsreens.TutorialsScreens"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro" />
 
         <receiver android:name=".utils.MyReceiver" />

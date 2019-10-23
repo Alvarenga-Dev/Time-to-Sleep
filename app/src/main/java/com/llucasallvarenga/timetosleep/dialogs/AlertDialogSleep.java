@@ -58,7 +58,7 @@ public class AlertDialogSleep extends AppCompatDialogFragment{
             sleepOptions = new ArrayList<>();
             recyclerView = view.findViewById(R.id.rcyOptionsSleepsId);
             cardView = view.findViewById(R.id.containerAlertDialodSleepId);
-            btnCancel = view.findViewById(R.id.btnAlertDialogSleepCancelId);
+            btnCancel = view.findViewById(R.id.btnAlertDialoSleepCancelId);
 
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager( new LinearLayoutManager( this.getActivity() ) );

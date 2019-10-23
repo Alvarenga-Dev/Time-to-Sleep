@@ -32,7 +32,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:padding="2dp"
-                android:text="@string/title_soneca_config"
+                android:text="@string/alert_dialog_title_connection_bt"
                 android:textAlignment="textStart"
                 android:textColor="@color/secondaryColor"
                 android:textSize="@dimen/font_size_big_smartphone"
@@ -51,16 +51,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitleConnectionBt" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcyOptionsSleepsId"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animBtConnection"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintBottom_toTopOf="@+id/divBottom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divTop" />
+                app:layout_constraintTop_toBottomOf="@+id/divTop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/connection_bt" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
@@ -78,26 +79,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-            <TextView
-                android:id="@+id/btnAlertDialoSleepCancelId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:padding="5dp"
-                android:text="@string/alertdialog_btn_canceled_help"
-                android:textAlignment="textEnd"
-                android:textColor="@color/secondaryColor"
-                android:textSize="@dimen/size_font_btn"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divBottom" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

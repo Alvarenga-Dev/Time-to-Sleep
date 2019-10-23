@@ -45,6 +45,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }else{
                 router(TutorialsScreens.class);
+                finish();
             }
 
         }, 1100);

@@ -92,6 +92,9 @@
     <string name="btn_title_send">Enviar</string>
     <string name="alertdialog_btn_canceled_help">Cancelar</string>
 
+    <!-- -->
+    <string name="alert_dialog_title_connection_bt">Conectando com o V-Timer</string>
+
     <!-- Alarm Stop -->
     <string name="title_alarm_stop">Alarme</string>
     <string name="alarm_stop">Alarme Parar</string>

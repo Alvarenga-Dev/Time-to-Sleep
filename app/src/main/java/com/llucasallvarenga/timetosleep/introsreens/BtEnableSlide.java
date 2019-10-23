@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.heinrichreimersoftware.materialintro.app.SlideFragment;
 import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;
@@ -35,7 +34,7 @@ public class BtEnableSlide extends SlideFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_bt_enable_slide, container, false);
+        View view = inflater.inflate(R.layout.slide_bt_enable, container, false);
 
         btnBtEnable = view.findViewById(R.id.btnBtEnable);
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

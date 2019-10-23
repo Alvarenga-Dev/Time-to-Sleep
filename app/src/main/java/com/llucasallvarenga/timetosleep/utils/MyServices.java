@@ -56,7 +56,7 @@ public class MyServices extends Service {
                     vibrator.vibrate(1500);
                     connectedThread.send("1");
                     Handler handler = new Handler();
-                    handler.postDelayed(() -> connectedThread.send("2"), 5000);
+                    handler.postDelayed(() -> connectedThread.send("2"), 6000);
                 }
                     
         }else
@@ -88,7 +88,6 @@ public class MyServices extends Service {
             } catch (IOException e) {
                 preferences.saveConnection(false);
                 Toast.makeText(getApplicationContext(), "Você não foi conectado com V-Timer", Toast.LENGTH_SHORT).show();
-                Log.i("AAAAA", e.getMessage());
             }
 
         }

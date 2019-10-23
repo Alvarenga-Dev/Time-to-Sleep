@@ -21,6 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.bluetooth.AdapterDeviceListBt;
 import com.llucasallvarenga.timetosleep.bluetooth.Device;
+import com.llucasallvarenga.timetosleep.dialogs.AlertDialogConnectionBt;
 import com.llucasallvarenga.timetosleep.utils.ConnectedThread;
 import com.llucasallvarenga.timetosleep.utils.Consts;
 import com.llucasallvarenga.timetosleep.utils.MyServices;
@@ -82,9 +83,8 @@ public class VTimerListBtFragment extends Fragment {
                     preferences.saveMacAdressBt(macAddress);
                     preferences.saveConnection(true);
 
-                    Intent intent = new Intent(getActivity(), MyServices.class);
-                    getActivity().startService(intent);
-                    getActivity().finish();
+                    AlertDialogConnectionBt alertDialogConnectionBt = new AlertDialogConnectionBt();
+                    alertDialogConnectionBt.show(Objects.requireNonNull(getFragmentManager()), "Alert Dialog Connection");
                 }
 
             }else
