@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.fragments;
+package com.llucasallvarenga.timetosleep.view.fragments;
 
 import android.os.Bundle;
 

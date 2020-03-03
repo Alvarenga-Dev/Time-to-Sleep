@@ -1,8 +1,7 @@
-package com.llucasallvarenga.timetosleep.fragments;
+package com.llucasallvarenga.timetosleep.view.fragments;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -21,10 +20,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.bluetooth.AdapterDeviceListBt;
 import com.llucasallvarenga.timetosleep.bluetooth.Device;
-import com.llucasallvarenga.timetosleep.dialogs.AlertDialogConnectionBt;
-import com.llucasallvarenga.timetosleep.utils.ConnectedThread;
+import com.llucasallvarenga.timetosleep.view.dialogs.AlertDialogConnectionBt;
 import com.llucasallvarenga.timetosleep.utils.Consts;
-import com.llucasallvarenga.timetosleep.utils.MyServices;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 import java.util.ArrayList;

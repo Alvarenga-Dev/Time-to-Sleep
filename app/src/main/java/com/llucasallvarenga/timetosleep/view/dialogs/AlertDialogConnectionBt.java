@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.dialogs;
+package com.llucasallvarenga.timetosleep.view.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

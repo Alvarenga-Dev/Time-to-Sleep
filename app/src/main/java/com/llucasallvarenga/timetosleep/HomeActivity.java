@@ -16,9 +16,9 @@ import com.llucasallvarenga.timetosleep.activites.SettingsActivity;
 import com.llucasallvarenga.timetosleep.activites.SupportActivity;
 import com.llucasallvarenga.timetosleep.activites.VTimerActivity;
 import com.llucasallvarenga.timetosleep.adapters.ViewPagerAdapter;
-import com.llucasallvarenga.timetosleep.fragments.AlarmFragment;
-import com.llucasallvarenga.timetosleep.fragments.ChronometerFragment;
-import com.llucasallvarenga.timetosleep.fragments.ClockFragment;
+import com.llucasallvarenga.timetosleep.view.fragments.AlarmFragment;
+import com.llucasallvarenga.timetosleep.view.fragments.ChronometerFragment;
+import com.llucasallvarenga.timetosleep.view.fragments.ClockFragment;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class HomeActivity extends AppCompatActivity{

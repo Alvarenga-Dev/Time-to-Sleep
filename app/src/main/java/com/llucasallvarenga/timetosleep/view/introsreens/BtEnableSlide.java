@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.introsreens;
+package com.llucasallvarenga.timetosleep.view.introsreens;
 
 
 import android.bluetooth.BluetoothAdapter;

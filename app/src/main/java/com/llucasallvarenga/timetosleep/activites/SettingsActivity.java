@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.dialogs.AlertDialogSleep;
-import com.llucasallvarenga.timetosleep.dialogs.AlertDialogStopVibration;
+import com.llucasallvarenga.timetosleep.view.dialogs.AlertDialogSleep;
+import com.llucasallvarenga.timetosleep.view.dialogs.AlertDialogStopVibration;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class SettingsActivity extends AppCompatActivity implements

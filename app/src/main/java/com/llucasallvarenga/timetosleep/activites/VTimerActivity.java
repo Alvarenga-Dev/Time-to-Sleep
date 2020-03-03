@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.fragments.VTimerListBtFragment;
-import com.llucasallvarenga.timetosleep.fragments.VTimerStatusFragment;
+import com.llucasallvarenga.timetosleep.view.fragments.VTimerListBtFragment;
+import com.llucasallvarenga.timetosleep.view.fragments.VTimerStatusFragment;
 import com.llucasallvarenga.timetosleep.utils.Preferences;
 
 public class VTimerActivity extends AppCompatActivity {

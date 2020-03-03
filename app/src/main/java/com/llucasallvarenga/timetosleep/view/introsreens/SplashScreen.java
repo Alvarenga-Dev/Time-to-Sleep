@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.introsreens;
+package com.llucasallvarenga.timetosleep.view.introsreens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.HomeActivity;
 import com.llucasallvarenga.timetosleep.R;

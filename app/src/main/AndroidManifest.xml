@@ -22,7 +22,7 @@
         <activity android:name=".activites.AppDataActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activites.TermsAndPolicyActivity" android:screenOrientation="portrait"/>
         <activity
-            android:name=".introsreens.SplashScreen"
+            android:name=".view.introsreens.SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,7 @@
         <activity android:name=".activites.SettingsActivity" android:screenOrientation="portrait" />
         <activity android:name=".activites.AlarmStopActivity" android:screenOrientation="portrait" />
         <activity
-            android:name=".introsreens.TutorialsScreens"
+            android:name=".view.introsreens.TutorialsScreens"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Intro" />
 
