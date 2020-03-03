@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.llucasallvarenga.timetosleep.R;
+import com.llucasallvarenga.timetosleep.model.StopVibratingOptions;
 
 import java.util.ArrayList;
 

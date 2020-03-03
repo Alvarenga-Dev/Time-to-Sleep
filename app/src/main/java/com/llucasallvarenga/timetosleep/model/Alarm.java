@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.database;
+package com.llucasallvarenga.timetosleep.model;
 
 import java.io.Serializable;
 

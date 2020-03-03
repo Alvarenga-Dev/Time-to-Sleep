@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.bluetooth.AdapterDeviceListBt;
-import com.llucasallvarenga.timetosleep.bluetooth.Device;
+import com.llucasallvarenga.timetosleep.model.Device;
 import com.llucasallvarenga.timetosleep.view.dialogs.AlertDialogConnectionBt;
 import com.llucasallvarenga.timetosleep.utils.Consts;
 import com.llucasallvarenga.timetosleep.utils.Preferences;

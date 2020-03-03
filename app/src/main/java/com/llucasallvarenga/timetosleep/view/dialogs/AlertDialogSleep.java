@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.view.adapters.AdapterSleep;
-import com.llucasallvarenga.timetosleep.view.adapters.SleepOptions;
+import com.llucasallvarenga.timetosleep.model.SleepOptions;
 
 import org.jetbrains.annotations.NotNull;
 

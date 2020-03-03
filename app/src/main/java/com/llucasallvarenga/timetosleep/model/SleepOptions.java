@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.view.adapters;
+package com.llucasallvarenga.timetosleep.model;
 
 public class SleepOptions {
 

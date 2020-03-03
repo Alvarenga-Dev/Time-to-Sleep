@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.llucasallvarenga.timetosleep.R;
+import com.llucasallvarenga.timetosleep.model.Informations;
 
 import java.util.ArrayList;
 

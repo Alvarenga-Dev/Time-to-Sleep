@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.utils.MyReceiver;
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.database.Alarm;
+import com.llucasallvarenga.timetosleep.model.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 
 import java.text.MessageFormat;

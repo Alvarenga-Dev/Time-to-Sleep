@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.bluetooth;
+package com.llucasallvarenga.timetosleep.model;
 
 public class Device {
 

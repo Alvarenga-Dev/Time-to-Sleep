@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.llucasallvarenga.timetosleep.R;
 import com.llucasallvarenga.timetosleep.view.adapters.AdapterArticles;
 import com.llucasallvarenga.timetosleep.view.adapters.AdapterInformations;
-import com.llucasallvarenga.timetosleep.view.adapters.Articles;
-import com.llucasallvarenga.timetosleep.view.adapters.Informations;
+import com.llucasallvarenga.timetosleep.model.Articles;
+import com.llucasallvarenga.timetosleep.model.Informations;
 
 import java.util.ArrayList;
 
