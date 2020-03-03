@@ -5,7 +5,7 @@
     android:id="@+id/supportLayoutId"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.SupportActivity">
+    tools:context=".view.activites.SupportActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

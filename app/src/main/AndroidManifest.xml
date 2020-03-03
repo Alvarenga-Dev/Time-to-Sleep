@@ -19,8 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activites.AppDataActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activites.TermsAndPolicyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".view.activites.AppDataActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".view.activites.TermsAndPolicyActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".view.introsreens.SplashScreen"
             android:screenOrientation="portrait">
@@ -31,11 +31,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" android:screenOrientation="portrait" />
-        <activity android:name=".activites.VTimerActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activites.SupportActivity" android:screenOrientation="portrait" />
-        <activity android:name=".activites.HelpActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activites.SettingsActivity" android:screenOrientation="portrait" />
-        <activity android:name=".activites.AlarmStopActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.activites.VTimerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".view.activites.SupportActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.activites.HelpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".view.activites.SettingsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.activites.AlarmStopActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".view.introsreens.TutorialsScreens"
             android:screenOrientation="portrait"

@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.activites;
+package com.llucasallvarenga.timetosleep.view.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;

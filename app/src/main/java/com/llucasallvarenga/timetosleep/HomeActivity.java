@@ -11,11 +11,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.llucasallvarenga.timetosleep.activites.HelpActivity;
-import com.llucasallvarenga.timetosleep.activites.SettingsActivity;
-import com.llucasallvarenga.timetosleep.activites.SupportActivity;
-import com.llucasallvarenga.timetosleep.activites.VTimerActivity;
-import com.llucasallvarenga.timetosleep.adapters.ViewPagerAdapter;
+import com.llucasallvarenga.timetosleep.view.activites.HelpActivity;
+import com.llucasallvarenga.timetosleep.view.activites.SettingsActivity;
+import com.llucasallvarenga.timetosleep.view.activites.SupportActivity;
+import com.llucasallvarenga.timetosleep.view.activites.VTimerActivity;
+import com.llucasallvarenga.timetosleep.view.adapters.ViewPagerAdapter;
 import com.llucasallvarenga.timetosleep.view.fragments.AlarmFragment;
 import com.llucasallvarenga.timetosleep.view.fragments.ChronometerFragment;
 import com.llucasallvarenga.timetosleep.view.fragments.ClockFragment;

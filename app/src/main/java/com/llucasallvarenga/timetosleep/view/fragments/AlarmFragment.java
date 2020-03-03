@@ -18,8 +18,8 @@ import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.activites.VTimerActivity;
-import com.llucasallvarenga.timetosleep.adapters.AdapterAlarms;
+import com.llucasallvarenga.timetosleep.view.activites.VTimerActivity;
+import com.llucasallvarenga.timetosleep.view.adapters.AdapterAlarms;
 import com.llucasallvarenga.timetosleep.database.Alarm;
 import com.llucasallvarenga.timetosleep.database.DatabaseAlarmController;
 import com.llucasallvarenga.timetosleep.utils.MyReceiver;

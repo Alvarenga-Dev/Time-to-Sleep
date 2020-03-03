@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.adapters;
+package com.llucasallvarenga.timetosleep.view.adapters;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

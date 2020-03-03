@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.llucasallvarenga.timetosleep.activites.AlarmStopActivity;
+import com.llucasallvarenga.timetosleep.view.activites.AlarmStopActivity;
 
 public class MyReceiver extends BroadcastReceiver {
     @Override

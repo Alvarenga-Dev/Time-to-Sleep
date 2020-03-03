@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.adapters;
+package com.llucasallvarenga.timetosleep.view.adapters;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;

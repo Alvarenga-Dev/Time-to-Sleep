@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.activites;
+package com.llucasallvarenga.timetosleep.view.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.adapters.AdapterArticles;
-import com.llucasallvarenga.timetosleep.adapters.AdapterInformations;
-import com.llucasallvarenga.timetosleep.adapters.Articles;
-import com.llucasallvarenga.timetosleep.adapters.Informations;
+import com.llucasallvarenga.timetosleep.view.adapters.AdapterArticles;
+import com.llucasallvarenga.timetosleep.view.adapters.AdapterInformations;
+import com.llucasallvarenga.timetosleep.view.adapters.Articles;
+import com.llucasallvarenga.timetosleep.view.adapters.Informations;
 
 import java.util.ArrayList;
 

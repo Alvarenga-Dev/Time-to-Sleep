@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.adapters;
+package com.llucasallvarenga.timetosleep.view.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,46 +12,43 @@ import com.llucasallvarenga.timetosleep.R;
 
 import java.util.ArrayList;
 
-public class AdapterStopVibration extends RecyclerView.Adapter<AdapterStopVibration.ViewHolder> {
+public class AdapterSleep extends RecyclerView.Adapter<AdapterSleep.ViewHolder> {
 
-    private ArrayList<StopVibratingOptions> stopVibratingOptions; private OnItemClickListener listener;
+    private ArrayList<SleepOptions> sleepOptions;
+    private OnItemClickListener listener;
 
     public interface OnItemClickListener{ void onItemClick(int position);}
     public void setOnClickListener(OnItemClickListener listener){ this.listener = listener; }
 
-    public AdapterStopVibration(ArrayList<StopVibratingOptions> stopVibratingOptions) {
-        this.stopVibratingOptions = stopVibratingOptions;
+    public AdapterSleep(ArrayList<SleepOptions> sleepOptions) {
+        this.sleepOptions = sleepOptions;
     }
 
     @NonNull
     @Override
-    public AdapterStopVibration.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_options_stop_vibration, parent, false);
+    public AdapterSleep.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_options_sleep, parent,false);
         return new ViewHolder(view, listener);
-
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterStopVibration.ViewHolder holder, int position) {
-
-        holder.tvStopVibration.setText(stopVibratingOptions.get(position).getStopVibratingOptions());
-
+    public void onBindViewHolder(@NonNull AdapterSleep.ViewHolder holder, int position) {
+        holder.tvSleep.setText( sleepOptions.get(position).getMinutes() );
     }
 
     @Override
     public int getItemCount() {
-        return stopVibratingOptions.size();
+        return sleepOptions.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvStopVibration;
+        TextView tvSleep;
 
         ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
-            tvStopVibration = itemView.findViewById(R.id.tvDisplayStopVibrationId);
+            tvSleep = itemView.findViewById(R.id.tvDisplayOptionsSleepEId);
 
             itemView.setOnClickListener(view -> {
 
@@ -61,7 +58,6 @@ public class AdapterStopVibration extends RecyclerView.Adapter<AdapterStopVibrat
                         listener.onItemClick(positionRcy);
                 }
             });
-
         }
     }
 }

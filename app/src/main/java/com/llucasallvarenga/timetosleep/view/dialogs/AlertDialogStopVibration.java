@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.llucasallvarenga.timetosleep.R;
-import com.llucasallvarenga.timetosleep.adapters.AdapterStopVibration;
-import com.llucasallvarenga.timetosleep.adapters.StopVibratingOptions;
+import com.llucasallvarenga.timetosleep.view.adapters.AdapterStopVibration;
+import com.llucasallvarenga.timetosleep.view.adapters.StopVibratingOptions;
 
 import org.jetbrains.annotations.NotNull;
 

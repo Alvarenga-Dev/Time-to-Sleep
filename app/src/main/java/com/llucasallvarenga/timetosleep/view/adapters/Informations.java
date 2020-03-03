@@ -1,4 +1,4 @@
-package com.llucasallvarenga.timetosleep.adapters;
+package com.llucasallvarenga.timetosleep.view.adapters;
 
 public class Informations {
 
