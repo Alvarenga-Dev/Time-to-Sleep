@@ -5,7 +5,7 @@
 
 > O Time to Sleep é um aplicativo desenvolvido nativamente para Android utilizando o Java como principal linguagem. Este aplicativo realiza uma comunicação com um travesseiro que possui um circuito integrado para realizar pequenas vibrações no travesseiro, assim tendo a possibilidade de despertar uma pessoa que seja surda ou tenha uma perda auditiva muito grande. Este projeto foi desenvolvido para 27° Mostra tecnológica da escola técnica Rezende Rammel e obtendo o 1° Lugar nessa edição na área de engenharia.
 
-## 🏠 [Link para saber mais sobre o projeto](https://timetosleepbr.github.io/)
+🏠 [Link para saber mais sobre o projeto](https://timetosleepbr.github.io/)
 
 ## Como instalar o aplicativo
 
